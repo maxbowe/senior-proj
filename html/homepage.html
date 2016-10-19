@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel='shortcut icon' href='../images/puck.png' type='image/x-icon'/ >
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="../node_modules/chart.js/dist/Chart.bundle.js"></script>
+
   </head>
   
   <body>
@@ -27,21 +29,22 @@
 			<br>
 		</p>
 					<img class="crosby" src="../images/crosby.png"></img>
-					<img class="crosbyspeech" src="../images/speech-bubble-crosby.png"/>
+					<a><img class="crosbyspeech" src="../images/speech-bubble-crosby.png"/>
 					<p class="crosbyspeech" id="crosby1">Speech bubbles make what I say a precious gift and nothing else. For here and for elsewhere. Thank god! If I had to explain too much I might...</p>
-					<p class="crosbyspeech" id="crosby2">RUN OUT OF ROOM</p>
-					<p class="crosbyspeech" id="crosby3">RUN ggggOUT OF ROOM</p>
-					<p class="crosbyspeech" id="crosby4">RUN OUhfgfjfjfhT OF ROOM</p>
-					
+					<p class="crosbyspeech" id="crosby2">Words will eventually fill up much more space here </p>
+					<p class="crosbyspeech" id="crosby3">AND WORDS WILL BE HERE</p>
+					<p class="crosbyspeech" id="crosby4">tHIS IS ANOTHER ONE TOOOOOO, click to go back home</p>
+					</a>
 
 
 		<p id="introtext1"> Why do people care about hockey analytics?
 		The purpose of analytics is to figure out why an outcome happens, how to reproduce that outcome and what the best way is to assure that outcome happens again. Finding <a class="define" id="defCorrelation">correlations</a> between events is extremely important. For example, there is a very high correlation between scoring more goals than your opponent and winning. Even if that seems obvious, its an important relationship to make, because you can then start to look at bigger questions, like “what allows my team to score more goals than the other?”  and “how do I make sure the other team doesn’t score many goals?”. Even questions like “When is the best time to pull my goalie (goalie getting yanked offstage with cane)?” can be answered with analytics.
 		<a><img class="introarrow1" src="../images/arrow.png"></img></a>
 		</p> 
-		<canvas id="CorrCanvas" width:"300" height:1`"300"></canvas>
+		<canvas id="CorrCanvas" width="300" height="300" style="display: block;/* width: 400px; *//* height: 400px; */"></canvas>
+
 		<p id="introtext2"> The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses. However a metric like shot attempts (better known as CORSI, but we will be getting more into that in Possession Metrics and Rate Stats) is much more repeatable because it relies on less separate factors, although those factors still do exist).
-		<canvas id="RepCanvas" width:"300" height:"300"></canvas>
+		<canvas id="RepCanvas" width="300" height="300"></canvas>
 
 		<a><img class="introbackarrow2" src="../images/backarrow.png"></img></a>
 		<a><img class="introarrow2" src="../images/arrow.png"></img></a>
@@ -85,14 +88,7 @@
 	<div class ="row">
 		
 		<p id="bottomlink">
-			<br>
-			<br>
-			<br><br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+			
 			<a id= "subsection">Combating Perception</a>
 			
 		</p>

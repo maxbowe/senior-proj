@@ -1,3 +1,4 @@
+
 /* date on menu click*/
 function displayDate() {
     document.getElementById("menuClick").innerHTML = Date();
@@ -135,7 +136,7 @@ $(".puck").click(function(){
 	}
 });  
 /* brings up defintion of correlation */
-var defCorrel = false;
+ var defCorrel = false;
 var my_canvas = document.getElementById('CorrCanvas');
 var corrDisp = my_canvas.getContext("2d");
 $("#CorrCanvas").hide();
@@ -148,14 +149,11 @@ $("#defCorrelation").click(function(){
 	}
 	else{
 		$("#CorrCanvas").show();
-		corrDisp.beginPath();
-		corrDisp.strokeRect(20,20,200,250)
-		$("#defCorrelation").css({
-		});
+		
 		defCorrel=true;
 	}
 
-});
+}); 
 
 var defRep = false;
 var my_canvas = document.getElementById('RepCanvas');
@@ -171,7 +169,7 @@ $("#defRepeat").click(function(){
 	else{
 		$("#RepCanvas").show();
 		repDisp.beginPath();
-		repDisp.strokeRect(20,20,200,250)
+		repDisp.strokeRect(20,20,400,250)
 		$("#defRepeat").css({
 		});
 		defRep=true;
@@ -270,11 +268,9 @@ $("#toplink").click(function(){
 	}
 });  
  var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
-
  $(".crosbyspeech").click(function(){
-			$(crosbySlide).hide();
 
-		if(crosbySlideNum >= 5){
+		if(crosbySlideNum >= 4){
 			
 			returnToHomeFromLink();
 			toplinkON=false;
@@ -282,12 +278,12 @@ $("#toplink").click(function(){
 			crosbySlideNum = 1;
 
 		}
+		
 		else{
-						$(crosbySlide).hide();
-
+			$(crosbySlide).hide();
+			crosbySlideNum+=1;
 			crosbySlide= "#crosby" + crosbySlideNum;
 
-			crosbySlideNum++;
 
 			$(crosbySlide).show(); 
 
@@ -386,5 +382,41 @@ $("#bottomlink").click(function(){
 	}
 });  
 
- 
- 
+ //sample chart
+ var ctx = document.getElementById("CorrCanvas");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    },
+	options: {
+        legend: {
+            display: true,
+			bodyFontSize: '55px'
+        }
+    }
+});
