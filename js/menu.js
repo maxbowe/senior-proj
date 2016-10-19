@@ -168,10 +168,7 @@ $("#defRepeat").click(function(){
 	}
 	else{
 		$("#RepCanvas").show();
-		repDisp.beginPath();
-		repDisp.strokeRect(20,20,400,250)
-		$("#defRepeat").css({
-		});
+
 		defRep=true;
 	}
 
@@ -390,7 +387,7 @@ var myChart = new Chart(ctx, {
         labels: ["Red", "Blue", "Yellow"],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3],
+            data: [5, 4, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -408,15 +405,43 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    min:0,
+					beginAtZero:true
+					
                 }
             }]
-        }
-    },
-	options: {
-        legend: {
-            display: true,
-			bodyFontSize: '55px'
-        }
+        },
+		legend: {
+            display: false,
+			fontSize: 55
+        },
+		title: {
+                    display: true,
+                    text: 'SAMPLE CHART',
+					fontSize: 42
+		}
     }
+});
+var cty = document.getElementById("RepCanvas");
+var myPieChart = new Chart(cty,{
+    type: 'pie',
+    data: { labels: [
+        "Red",
+        "Blue",
+        "Yellow"
+    ],
+    datasets: [
+        {
+            data: [300, 50, 100],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+	}]}
 });
