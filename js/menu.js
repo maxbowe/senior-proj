@@ -219,12 +219,15 @@ $(".introX").click(function(){
 				width: '+=100px',
 				bottom: "0px",
 				top:"-=40%",
-				left:"-=3%"
-
-				
+				left:"-=3%",
+			
 
 			});
-			$("body").css({
+		$(".puck").attr("src", "../images/puck.png");
+
+	
+
+	$("body").css({
 				'background-size': '100%',
 				'background-position': 'center'
 			});
