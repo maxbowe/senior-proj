@@ -1,3 +1,4 @@
+var introPuckHome =false;
 
 /* date on menu click*/
 function displayDate() {
@@ -7,7 +8,6 @@ function changeImage(obj,img) {
 			  obj.src = img;
 			}
 //returns to home state
-
 function returnToHome(){
 			$("#leftlink").show();
 			$("#toplink").show();
@@ -20,6 +20,8 @@ function returnToHome(){
 			$("#introtext4").hide();
 			$(".crosby").hide();
 			$(".crosbyspeech").hide();
+			$(".introbg").hide();
+
 			canvasReset();
 					introON=false;
 }
@@ -62,8 +64,25 @@ $("#introtext1").hide();
 $("#introtext2").hide();
 $("#introtext3").hide();
 $("#introtext4").hide();
+$(".introbg").hide();
+
 $(".puck").click(function(){
-	if(introON){
+	 if(introPuckHome){
+	$(".puck").animate({
+		height: '+=400px',
+		width: '+=400px',
+		top:"+=-21%",
+		left:"-=29%"
+	});
+	introPuckHome=false;
+	$("body").css({
+				'background-size': '100%',
+				'background-position': 'center'
+			});
+			changeImage(this,"../images/puck.png");
+			returnToHome();
+	}
+	else if(introON){
 		$(".puck").animate({
 				height: '+=100px',
 				width: '+=100px',
@@ -84,6 +103,7 @@ $(".puck").click(function(){
 
 		introON=false;
 	}
+	
 	/* returns puck to normal */
 	else if(leftlinkON) {
 		
@@ -100,23 +120,26 @@ $(".puck").click(function(){
 		rightlinkON=false;
 	}
 	/* returns puck to normal */
-	else if(toplinkON) {
+	else if(toplinkON && !introPuckHome) {
 		returnToHomeFromLink();
 
 
 		toplinkON=false;
 	}
 	/* returns puck to normal */
+
 	else if(bottomlinkON) {
 		returnToHomeFromLink();
 
 
 		bottomlinkON=false;
 	}
+	
 	else{
 		changeImage(this,"../images/home.png");
+		$(".introbg").show();
 
-		$(".puck" || ".centerpuck").animate({
+		$(".puck").animate({
 				height: '-=100px',
 				width: '-=100px',
 				top:"+=40%",
@@ -203,10 +226,19 @@ $(".introbackarrow3").click(function(){
 $(".introarrow3").click(function(){
 	$("#introtext3").hide();
 	$("#introtext4").show();
+	$(".puck").animate({
+		height: '-=300px',
+		width: '-=300px',
+		top:"-=19%",
+		left:"+=26%"
+	});
+	introPuckHome =true;
 });
 $(".introbackarrow4").click(function(){
 	$("#introtext3").show();
 	$("#introtext4").hide();
+			
+
 });
 $(".introX").click(function(){
 	$(".puck").animate({

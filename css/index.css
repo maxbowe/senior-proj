@@ -7,8 +7,15 @@ p {
 }
 #subsection{
 	color:black;
-	font-family:"Rockwell";
-	font-style:italic;
+	font-family:"Gotham";
+	font-size:2.5em;
+	visibility: visible;
+	-webkit-text-stroke: 1px rgb(206,217,232);
+}
+#subsection:hover{
+	color:rgba(206,217,232,.5);
+   -webkit-text-stroke: 1px black;
+	font-family:"Gotham";
 	font-size:2.5em;
 	visibility: visible;
 }
@@ -36,8 +43,13 @@ left:50%
 	top:25%;
 	left:37%;
 	right:30%;
-
+	z-index:20;
 } 
+.puck:hover{
+		width:28%;
+		top:23%;
+		left:36%;
+}
 #rightlink{
 	top:50%;
 	right:10%;
@@ -70,24 +82,42 @@ left:50%
 background-color:yellow;
 }
 #introtext1, #introtext2, #introtext3, #introtext4{
-font-family:"Rockwell";
-font-size:1.5em;
-top:10%;
+font-family:"Gotham light";
+font-size:1.4em;
+top:3%;
 position:absolute;
-left:25%;
-right:25%;
-background-color:rgba(233,131,138,.6);
+left:30%;
+right:30%;
 z-index:5;
+height:500px;
+width:800px;
+}
+.introbg{
+position: absolute;
+top: 0%;
+left: 23%;
+z-index: -3;
+width: 1080px;
+height: 600px;
+
 }
 
-.introarrow1, .introarrow2, .introarrow3, .introX{
+.introarrow1, .introarrow2, .introarrow3{
 	position:absolute;
-	top:125%;
+	top:93%;
 	right:0%;
+}
+.introX{
+	position:absolute;
+	top:90%;
+	right:0%;
+	width:5em;
+	height:4em;
+
 }
 .introbackarrow2, .introbackarrow3, .introbackarrow4{
 position:absolute;
-	top:125%;
+	top:93%;
 	left:0%;
 }
 #CorrCanvas, #RepCanvas{
