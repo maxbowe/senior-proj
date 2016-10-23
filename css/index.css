@@ -84,12 +84,12 @@ left:50%
 	font-weight:bold;
 }
 .define{
-background-color:yellow;
+color: rgb(224, 136, 136);
 }
 #introtext1, #introtext2, #introtext3, #introtext4{
-font-family:"DINPro";
+font-family:"Calibri";
 /* font-weight:bold;	
- */font-size:1.5em;
+ */font-size:1.75em;
 top:3%;
 position:absolute;
 left:25%;

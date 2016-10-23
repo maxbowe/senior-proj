@@ -137,6 +137,7 @@ $(".puck").click(function(){
 	else{
 		changeImage(this,"../images/home.png");
 		$(".introbg").show();
+
 				introtext1Start();
 
 
@@ -231,8 +232,9 @@ $(".introarrow2").click(function(){
 $(".introbackarrow3").click(function(){
 	$("#introtext2").show();
 	$("#introtext3").hide();
-	introtext2Start();
 	animate3.stop();
+	introtext2Start();
+
 
 });
 $(".introarrow3").click(function(){
@@ -318,6 +320,7 @@ $("#toplink").click(function(){
 		$("#crosby4").hide();
 		$("#toptext1").show();	
 		toplinkON=true;
+
 
 	}
 });  
@@ -508,7 +511,7 @@ var myPieChart = new Chart(cty,{
 	}]}
 });
 
-var animate1 = $("#introtext1").blast({ delimiter: "word" });
+var animate1 = $("#introtext1").blast({ delimiter: "character" });
 function introtext1Start(){animate1.each(function(i) {
   // initialize position
   $(this).css({
@@ -519,13 +522,13 @@ function introtext1Start(){animate1.each(function(i) {
 
   // Delay: we don't want to animate
   // characters simultaneously
-  .delay(i * 45)
+  .delay(i * 7)
 
   // Animate to the right
   .animate({ opacity: 1}, 500);
 });
 }
-var animate2 = $("#introtext2").blast({ delimiter: "word" });
+var animate2 = $("#introtext2").blast({ delimiter: "character" });
 function introtext2Start(){ animate2.each(function(i) {
 	  // initialize position
 	  $(this).css({
@@ -536,13 +539,13 @@ function introtext2Start(){ animate2.each(function(i) {
 
 	  // Delay: we don't want to animate
 	  // characters simultaneously
-	  .delay(i * 45)
+	  .delay(i * 7)
 
 	  // Animate to the right
 	  .animate({ opacity: 1}, 500);
 	});
 }
-var animate3 = $("#introtext3").blast({ delimiter: "word" });
+var animate3 = $("#introtext3").blast({ delimiter: "character" });
 function introtext3Start(){ animate3.each(function(i) {
 	  // initialize position
 	  $(this).css({
@@ -553,13 +556,13 @@ function introtext3Start(){ animate3.each(function(i) {
 
 	  // Delay: we don't want to animate
 	  // characters simultaneously
-	  .delay(i * 45)
+	  .delay(i * 7)
 
 	  // Animate to the right
 	  .animate({ opacity: 1}, 500);
 	});
 }
-var animate4 = $("#introtext4").blast({ delimiter: "word" });
+var animate4 = $("#introtext4").blast({ delimiter: "character" });
 function introtext4Start(){ animate4.each(function(i) {
 	  // initialize position
 	  $(this).css({
@@ -570,7 +573,7 @@ function introtext4Start(){ animate4.each(function(i) {
 
 	  // Delay: we don't want to animate
 	  // characters simultaneously
-	  .delay(i * 45)
+	  .delay(i * 7)
 
 	  // Animate to the right
 	  .animate({ opacity: 1}, 500);
