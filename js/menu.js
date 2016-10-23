@@ -1,5 +1,4 @@
 var introPuckHome =false;
-
 /* date on menu click*/
 function displayDate() {
     document.getElementById("menuClick").innerHTML = Date();
@@ -69,10 +68,10 @@ $(".introbg").hide();
 $(".puck").click(function(){
 	 if(introPuckHome){
 	$(".puck").animate({
-		height: '+=400px',
-		width: '+=400px',
-		top:"+=-21%",
-		left:"-=29%"
+		height: '+=450px',
+		width: '+=450px',
+		top:"+=-23%",
+		left:"-=28%"
 	});
 	introPuckHome=false;
 	$("body").css({
@@ -138,6 +137,8 @@ $(".puck").click(function(){
 	else{
 		changeImage(this,"../images/home.png");
 		$(".introbg").show();
+				introtext1Start();
+
 
 		$(".puck").animate({
 				height: '-=100px',
@@ -151,10 +152,11 @@ $(".puck").click(function(){
 				   
 
 			});
-			hideHome();			
+			hideHome();		
+			
 			
 			$("#introtext1").show();
-			
+
 		introON=true;
 	}
 });  
@@ -202,12 +204,16 @@ $(".introarrow1").click(function(){
 	$("#introtext1").hide();
 	$("#introtext2").show();
 	$("#CorrCanvas").hide();
+	introtext2Start();
+	animate1.stop();
 	canvasReset();
 
 });
 $(".introbackarrow2").click(function(){
 	$("#introtext1").show();
 	$("#introtext2").hide();
+	introtext1Start();
+	animate2.stop();
 		canvasReset();
 
 
@@ -216,31 +222,50 @@ $(".introbackarrow2").click(function(){
 $(".introarrow2").click(function(){
 	$("#introtext2").hide();
 	$("#introtext3").show();
+	introtext3Start();
+	animate2.stop();
+
 	canvasReset();
 
 });
 $(".introbackarrow3").click(function(){
 	$("#introtext2").show();
 	$("#introtext3").hide();
+	introtext2Start();
+	animate3.stop();
+
 });
 $(".introarrow3").click(function(){
 	$("#introtext3").hide();
 	$("#introtext4").show();
+	introtext4Start();
+	animate3.stop();
+
 	$(".puck").animate({
-		height: '-=300px',
-		width: '-=300px',
-		top:"-=19%",
-		left:"+=26%"
+		height: '-=350px',
+		width: '-=350px',
+		top:"-=17%",
+		left:"+=25%"
 	});
 	introPuckHome =true;
 });
 $(".introbackarrow4").click(function(){
 	$("#introtext3").show();
 	$("#introtext4").hide();
+	animate4.stop();
+	introtext3Start();
+	$(".puck").animate({
+		height: '+=350px',
+		width: '+=350px',
+		top:"+=17%",
+		left:"-=25%"
+	});
+		introPuckHome =false;
+
 			
 
 });
-$(".introX").click(function(){
+/* $(".introX").click(function(){
 	$(".puck").animate({
 				height: '+=100px',
 				width: '+=100px',
@@ -262,7 +287,7 @@ $(".introX").click(function(){
 
 
 		introON=false;
-});
+}); */
 /* actives toplink */
 var toplinkON = false;
 $(".crosby").hide();
@@ -272,7 +297,7 @@ $(".crosbyspeech").hide();
 $("#toplink").click(function(){
 
 	if(toplinkON){
-		
+
 	}
 	else{
 		$(".puck").animate({
@@ -293,34 +318,37 @@ $("#toplink").click(function(){
 		$("#crosby4").hide();
 		$("#toptext1").show();	
 		toplinkON=true;
-		
+
 	}
 });  
  var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
  $(".crosbyspeech").click(function(){
+				console.log(crosbySlideNum);
 
-		if(crosbySlideNum >= 4){
-			
+		if(crosbySlideNum == 4){
+			crosbySlideNum = 1;
+			crosbySlide= "#crosby" + crosbySlideNum;
+
 			returnToHomeFromLink();
 			toplinkON=false;
 
-			crosbySlideNum = 1;
+
 
 		}
 		
-		else{
+		else{			
 			$(crosbySlide).hide();
 			crosbySlideNum+=1;
 			crosbySlide= "#crosby" + crosbySlideNum;
+			$(crosbySlide).show();
+				console.log(crosbySlideNum);
 
-
-			$(crosbySlide).show(); 
 
 		} 
 		
 
 });
-	
+
 /* actives leftlink */
 var leftlinkON = false;
 $("#leftlink").click(function(){
@@ -412,6 +440,8 @@ $("#bottomlink").click(function(){
 });  
 
  //sample chart
+ var redNum = crosbySlideNum;
+
  var ctx = document.getElementById("CorrCanvas");
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -419,7 +449,7 @@ var myChart = new Chart(ctx, {
         labels: ["Red", "Blue", "Yellow"],
         datasets: [{
             label: '# of Votes',
-            data: [5, 4, 3],
+            data: [redNum, 4, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -464,7 +494,7 @@ var myPieChart = new Chart(cty,{
     ],
     datasets: [
         {
-            data: [300, 50, 100],
+            data: [25, 50, 100],
             backgroundColor: [
                 "#FF6384",
                 "#36A2EB",
@@ -477,3 +507,72 @@ var myPieChart = new Chart(cty,{
             ]
 	}]}
 });
+
+var animate1 = $("#introtext1").blast({ delimiter: "word" });
+function introtext1Start(){animate1.each(function(i) {
+  // initialize position
+  $(this).css({
+    position: 'relative',
+    left: 0,
+	opacity:0
+  })
+
+  // Delay: we don't want to animate
+  // characters simultaneously
+  .delay(i * 45)
+
+  // Animate to the right
+  .animate({ opacity: 1}, 500);
+});
+}
+var animate2 = $("#introtext2").blast({ delimiter: "word" });
+function introtext2Start(){ animate2.each(function(i) {
+	  // initialize position
+	  $(this).css({
+		position: 'relative',
+		left: 0,
+		opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 45)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}
+var animate3 = $("#introtext3").blast({ delimiter: "word" });
+function introtext3Start(){ animate3.each(function(i) {
+	  // initialize position
+	  $(this).css({
+		position: 'relative',
+		left: 0,
+		opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 45)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}
+var animate4 = $("#introtext4").blast({ delimiter: "word" });
+function introtext4Start(){ animate4.each(function(i) {
+	  // initialize position
+	  $(this).css({
+		position: 'relative',
+		left: 0,
+		opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 45)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}

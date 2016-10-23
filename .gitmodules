@@ -1,0 +1,6 @@
+[submodule "blast"]
+	path = blast
+	url = https://github.com/julianshapiro/blast
+[submodule "velocity"]
+	path = velocity
+	url = https://github.com/julianshapiro/velocity
