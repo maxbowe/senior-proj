@@ -7,11 +7,11 @@
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
 
-            var max_value = 5
+            var max_value = 60
 
             chartOptions = {
-              segmentShowStroke: true,
-              percentageInnerCutout: 5,
+              segmentShowStroke: false,
+              percentageInnerCutout: 75,
               animation: false
             };
 
@@ -26,20 +26,20 @@
             var ctx = $('#chart2').get(0).getContext("2d");
             var theChart = new Chart(ctx).Doughnut(chartData,chartOptions);
 
-            $('#chart').click(function(){ 
+            theInterval = setInterval(function(){ 
                 if (theChart.segments[0].value == max_value) {
-                    theChart.segments[0].value =0
+                    clearInterval(theInterval);
                 } else {
                     theChart.segments[0].value = theChart.segments[0].value+1
                     theChart.segments[1].value = theChart.segments[1].value-1
                     theChart.update()
                 }
-            });
+            }, 1000);
       });
     </script>
   </head>
   <body>
-	    <canvas id="chart" width="300" height="300"></canvas>
+	    <canvas id="chart2" width="300" height="300"></canvas>
   </body>
   <script>
 
