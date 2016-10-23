@@ -7,7 +7,7 @@ p {
 }
 #subsection{
 	color:black;
-	font-family:"DINPro";
+	font-family:"Calibri";
 	font-size:3em;
 	font-weight:bold;
 	visibility: visible;
@@ -16,7 +16,7 @@ p {
 #subsection:hover{
 	color:rgba(206,217,232,.5);
    -webkit-text-stroke: 1px black;
-	font-family:"DINPro";
+	font-family:"Calibri";
 	font-weight:bold;
 	font-size:3em;
 	visibility: visible;
@@ -45,7 +45,7 @@ left:50%
 	top:25%;
 	left:37%;
 	right:30%;
-	z-index:20;
+	z-index:1;
 } 
 .puck:hover{
 		width:28%;
@@ -130,14 +130,22 @@ position:absolute;
 }
 #CorrCanvas, #RepCanvas{
 	position:absolute;
-    border: 1px dotted black;
-	background:white;
 	z-index:500;
 	top:22%;
-	left:54%;
-	height:600px !important;
-	width:600px !important;
-	}
+	left:20%;
+	z-index:5;
+}
+
+#CorrGraph1,#CorrGraph2, #CorrGraph3{
+	font-family:"Calibri";
+	position:absolute;
+	top:72%;
+	left:27%;
+	z-index:30;
+	font-size:1.5em;
+	text-align:left;
+	width:40%;
+}
 
 .crosby{
 	position:absolute;
@@ -151,10 +159,32 @@ position:absolute;
 	left:35%;
 }
 p.crosbyspeech  	{
-	font-family: "DINPro";
+	font-family: "Calibri";
 	font-size: 1.4em;
 	width:600px;
 	left:38%;
 	top:80%;
 	color:white;
+}
+
+.corrX1{
+	position:absolute;
+	top:33%;
+	left:55%;
+	width:50px;
+	background-color:red;
+	height:50px;
+	border-Radius:25px;	
+	z-index:25;
+}
+.corrY1{
+	position:absolute;
+	top:50%;
+	left:34%;
+	width:50px;
+	background-color:blue;
+	height:50px;
+	border-Radius:25px;
+	z-index:25;
+
 }

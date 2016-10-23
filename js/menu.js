@@ -20,6 +20,7 @@ function returnToHome(){
 			$(".crosby").hide();
 			$(".crosbyspeech").hide();
 			$(".introbg").hide();
+			hideCorr();
 
 			canvasReset();
 					introON=false;
@@ -163,24 +164,168 @@ $(".puck").click(function(){
 });  
 /* brings up defintion of correlation */
  var defCorrel = false;
-var my_canvas = document.getElementById('CorrCanvas');
-var corrDisp = my_canvas.getContext("2d");
 $("#CorrCanvas").hide();
-$("#defCorrelation").click(function(){
-	if(defCorrel){
-		$("#CorrCanvas").hide();
+$("#CorrGraph1").hide();
+$("#CorrGraph2").hide();
+$("#CorrGraph3").hide();
+function hideCorr(){
+	$("#CorrCanvas").hide();
 		$("#defCorrelation").css({
 		});
+		$("#CorrGraph1").hide();
+		corr3();
+		$("#CorrGraph1").hide();
+		$("#CorrGraph2").hide();
+			$("#CorrGraph3").hide();
+			$(".corrX1").hide();
+$(".corrY1").hide();
+	
+}
+var CorrGraph =1;
+$("#defCorrelation").click(function(){
+	if(defCorrel){
+		hideCorr();
 		defCorrel= false;
 	}
 	else{
+		$(".puck").animate({
+			zIndex:"1"
+		});
 		$("#CorrCanvas").show();
+		$("#CorrGraph1").show();
+		CorrGraph =1;
+		$(".corrX1").show();
+			$(".corrY1").show();
 		
 		defCorrel=true;
+		
 	}
 
-}); 
+});
+$(".corrX1").hide();
+$(".corrY1").hide();
+$("#CorrCanvas").click(function(){
+ if(CorrGraph==1){
+	 		$(".corrX1").show();
+			$(".corrY1").show();
+	$("#CorrGraph1").hide();
 
+	CorrGraph=2;
+	$("#CorrGraph2").show();
+	 corr1();
+ }
+	else if (CorrGraph==2){
+		$("#CorrGraph2").hide();
+	$("#CorrGraph3").show();
+
+		CorrGraph=3;
+		corr2();
+	}
+	else if(CorrGraph==3){
+		CorrGraph=4;
+		$("#CorrCanvas").hide();
+		$("#CorrGraph3").hide();
+
+		$(".corrX1").hide();
+		$(".corrY1").hide();
+		corr3();
+		defCorrel = false;
+		}
+});
+function corr1(){
+	$(".corrX1").velocity({
+	  borderRadius: "25px",
+	  width: "45px",
+	  height:"45px",
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  top:"41%",
+		left:"48%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+	$(".corrY1").velocity({
+	  borderRadius: "25px",
+	  width: "45px",
+	  height:"45px",
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  top:"44%",
+		left:"45%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+}
+function corr2(){
+	$(".corrX1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "blue",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  	 top:"30%",
+		left:"58%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+	$(".corrY1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  	 top:"52%",
+		left:"32%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+}
+function corr3(){
+	$(".corrX1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "blue",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  	 top:"33%",
+	left:"55%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+	$(".corrY1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	 top:"50%",
+	left:"34%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+}
 var defRep = false;
 var my_canvas = document.getElementById('RepCanvas');
 var repDisp = my_canvas.getContext("2d");
@@ -246,8 +391,9 @@ $(".introarrow3").click(function(){
 	$(".puck").animate({
 		height: '-=350px',
 		width: '-=350px',
-		top:"-=17%",
-		left:"+=25%"
+		top:"-=16%",
+		left:"+=25%",
+		zIndex:"2"
 	});
 	introPuckHome =true;
 });
@@ -443,7 +589,7 @@ $("#bottomlink").click(function(){
 });  
 
  //sample chart
- var redNum = crosbySlideNum;
+/*  var redNum = crosbySlideNum;
 
  var ctx = document.getElementById("CorrCanvas");
 var myChart = new Chart(ctx, {
@@ -509,7 +655,7 @@ var myPieChart = new Chart(cty,{
                 "#FFCE56"
             ]
 	}]}
-});
+}); */
 
 var animate1 = $("#introtext1").blast({ delimiter: "character" });
 function introtext1Start(){animate1.each(function(i) {
@@ -579,3 +725,4 @@ function introtext4Start(){ animate4.each(function(i) {
 	  .animate({ opacity: 1}, 500);
 	});
 }
+
