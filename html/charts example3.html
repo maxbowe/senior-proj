@@ -1,0 +1,61 @@
+<html>
+    <head>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>	
+		<script src="../js/Chart.Scatter-master/Chart.Core.js"></script>	
+	<script src="../js/Chart.Scatter-master/Chart.Scatter.js">
+	
+</script>
+
+
+    </head>
+    <body>
+        <h1>Live Updating Chart.js</h1>
+
+	<canvas id="canvas" width="640" height="480"></canvas>
+<script>
+
+
+		 $("body").click = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myChart = new Chart(ctx, {
+                type: 'bubble',
+                data: datasets: [{
+                label: "My First dataset",
+                backgroundColor: "blue",
+                data: [{
+                    x: 5,
+                    y: 7,
+                    r: Math.abs(100) / 5,
+                }, {
+                    x: 6,
+                    y: 4,
+                    r: Math.abs(25) / 5,
+                }]
+            }, {
+                label: "My Second dataset",
+                backgroundColor: "red",
+                data: [{
+                    x: 1,
+                    y: 8,
+                    r: Math.abs(95) / 5,
+                }, {
+                    x: 4,
+                    y: 6,
+                    r: Math.abs(57) / 5,
+                }]
+            }],
+                options: {
+                    responsive: true,
+                    title:{
+                        display:true,
+                        text:'Chart.js Bubble Chart'
+                    },
+                }
+            });
+        };
+
+	</script>
+
+    </body>
+	
+</html>

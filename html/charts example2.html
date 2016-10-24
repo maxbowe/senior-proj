@@ -1,0 +1,86 @@
+<html>
+    <head>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>	
+		<script src="../js/Chart.Scatter-master/Chart.Core.js"></script>	
+	<script src="../js/Chart.Scatter-master/Chart.Scatter.js">
+	
+</script>
+
+
+    </head>
+    <body>
+        <h1>Live Updating Chart.js</h1>
+
+	<canvas id="header-canvas" width="640" height="480"></canvas>
+<script>
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		var data = [], data2 = [], ii = 0;
+
+		for (ii = 0; ii < 12; ii++) {
+
+			data.push({
+				x: 50,
+				y: 75
+			});
+
+			data2.push({
+				x: 64,
+				y: 25
+			});
+		}
+
+		var ctx = document.getElementById("header-canvas").getContext("2d");
+		var myChart = new Chart(ctx).Scatter([{ label: "dataset 1", data: data }, { label: "dataset 2", data: data2 }], {
+			showScale: true,
+			scaleShowLabels: true,
+			scaleShowHorizontalLines: true,
+			scaleShowVerticalLines: false,
+			scaleLineWidth: 1,
+			scaleLineColor: "red",
+			scaleGridLineColor: "#999",
+			scaleLabel: "<%=value%>°C",
+			scaleDateFormat: "mm/yyyy",
+			scaleTimeFormat: "HH:MM",
+			scaleDateTimeFormat: "HH:MM",
+			scaleGridLineWidth: 1,
+			useUtc: true,
+			pointDot: false,
+			scaleType: 'date',
+			animation: false,
+
+			scaleOverride: false,
+			scaleSteps: 100,
+			scaleStepWidth: 50,
+			scaleStartValue: 0,
+
+			xScaleOverride: false,
+			xScaleSteps: 25,
+
+			// Number - The value jump in the hard coded x scale
+			xScaleStepWidth: 25,
+			xScale
+
+			// Number - The x scale starting value
+			xScaleStartValue: Date.parse("2016-02-15T03:00:00+03:00")
+		});
+
+
+		$("#header-canvas").click(function () {
+
+
+//			myChart.datasets[0].removePoint(0);
+//			myChart.datasets[1].removePoint(0);
+
+			myChart.datasets[0].addPoint(37, 35);
+			myChart.datasets[1].addPoint(73, 89);
+			myChart.update(), ii++;
+
+		});
+	</script>
+
+    </body>
+	
+</html>
