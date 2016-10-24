@@ -217,7 +217,7 @@ $("#CorrCanvas").click(function(){
 			$(".corrY1").show();
 	$("#CorrGraph1").hide();
 	CorrGraph=2;
-corrUpdate1();
+	corrUpdate(1);
 			$("#CorrGraph2").show();
 
 	 corr1();
@@ -225,7 +225,7 @@ corrUpdate1();
 	else if (CorrGraph==2){
 		$("#CorrGraph2").hide();
 	$("#CorrGraph3").show();
-
+		corrUpdate(2);
 		CorrGraph=3;
 		corr2();
 	}
@@ -237,6 +237,8 @@ corrUpdate1();
 
 		$(".corrX1").hide();
 		$(".corrY1").hide();
+		corrUpdate(3);
+
 		corr3();
 		defCorrel = false;
 		}
