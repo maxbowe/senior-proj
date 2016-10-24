@@ -2,7 +2,7 @@
     <head>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>	
 		<script src="../js/Chart.Scatter-master/Chart.Core.js"></script>	
-	<script src="../js/Chart.Scatter-master/Chart.Scatter.js">
+	<script src="../node_modules/chart.js/dist/Chart.js">
 	
 </script>
 
@@ -15,44 +15,47 @@
 <script>
 
 
-		 $("body").click = function() {
+		 
             var ctx = document.getElementById("canvas").getContext("2d");
-            window.myChart = new Chart(ctx, {
-                type: 'bubble',
-                data: datasets: [{
-                label: "My First dataset",
-                backgroundColor: "blue",
-                data: [{
-                    x: 5,
-                    y: 7,
-                    r: Math.abs(100) / 5,
-                }, {
-                    x: 6,
-                    y: 4,
-                    r: Math.abs(25) / 5,
-                }]
-            }, {
-                label: "My Second dataset",
-                backgroundColor: "red",
-                data: [{
-                    x: 1,
-                    y: 8,
-                    r: Math.abs(95) / 5,
-                }, {
-                    x: 4,
-                    y: 6,
-                    r: Math.abs(57) / 5,
-                }]
-            }],
-                options: {
-                    responsive: true,
-                    title:{
-                        display:true,
-                        text:'Chart.js Bubble Chart'
-                    },
+            var myChart = new Chart(ctx, {
+    type: 'bubble',
+    data: {
+        labels: ["Red", "green"],
+        datasets: [{
+            label: 'Corsi for% X Winning Chance%',
+            data: [{x:12,y:15,r:24},{x:19,y:14,r:54}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true,
+					max: 100,
+                    min: 0,
+                    stepSize: 25
                 }
-            });
-        };
+            }],
+			 xAxes: [{
+                ticks: {
+                    max: 100,
+                    min: 0,
+                    stepSize: 25
+                }
+            }]
+        }
+    }
+});
+       
 
 	</script>
 

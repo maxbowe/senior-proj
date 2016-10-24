@@ -21,6 +21,8 @@ function returnToHome(){
 			$(".crosbyspeech").hide();
 			$(".introbg").hide();
 			hideCorr();
+					$("#canvas").hide();
+
 
 			canvasReset();
 					introON=false;
@@ -182,9 +184,13 @@ $(".corrY1").hide();
 	
 }
 var CorrGraph =1;
+		$("#canvas").hide();
+
 $("#defCorrelation").click(function(){
 	if(defCorrel){
 		hideCorr();
+				$("#canvas").hide();
+
 		defCorrel= false;
 	}
 	else{
@@ -193,6 +199,7 @@ $("#defCorrelation").click(function(){
 		});
 		$("#CorrCanvas").show();
 		$("#CorrGraph1").show();
+		$("#canvas").show();
 		CorrGraph =1;
 		$(".corrX1").show();
 			$(".corrY1").show();
@@ -209,9 +216,10 @@ $("#CorrCanvas").click(function(){
 	 		$(".corrX1").show();
 			$(".corrY1").show();
 	$("#CorrGraph1").hide();
-
 	CorrGraph=2;
-	$("#CorrGraph2").show();
+
+			$("#CorrGraph2").show();
+
 	 corr1();
  }
 	else if (CorrGraph==2){
@@ -225,6 +233,7 @@ $("#CorrCanvas").click(function(){
 		CorrGraph=4;
 		$("#CorrCanvas").hide();
 		$("#CorrGraph3").hide();
+		$("#canvas").hide();
 
 		$(".corrX1").hide();
 		$(".corrY1").hide();
@@ -656,8 +665,7 @@ var myPieChart = new Chart(cty,{
             ]
 	}]}
 }); */
-
-var animate1 = $("#introtext1").blast({ delimiter: "character" });
+var animate1 = $("#introtext1").blast({ delimiter: "word" });
 function introtext1Start(){animate1.each(function(i) {
   // initialize position
   $(this).css({
@@ -674,7 +682,7 @@ function introtext1Start(){animate1.each(function(i) {
   .animate({ opacity: 1}, 500);
 });
 }
-var animate2 = $("#introtext2").blast({ delimiter: "character" });
+var animate2 = $("#introtext2").blast({ delimiter: "word" });
 function introtext2Start(){ animate2.each(function(i) {
 	  // initialize position
 	  $(this).css({
@@ -691,7 +699,7 @@ function introtext2Start(){ animate2.each(function(i) {
 	  .animate({ opacity: 1}, 500);
 	});
 }
-var animate3 = $("#introtext3").blast({ delimiter: "character" });
+var animate3 = $("#introtext3").blast({ delimiter: "word" });
 function introtext3Start(){ animate3.each(function(i) {
 	  // initialize position
 	  $(this).css({
@@ -708,7 +716,7 @@ function introtext3Start(){ animate3.each(function(i) {
 	  .animate({ opacity: 1}, 500);
 	});
 }
-var animate4 = $("#introtext4").blast({ delimiter: "character" });
+var animate4 = $("#introtext4").blast({ delimiter: "word" });
 function introtext4Start(){ animate4.each(function(i) {
 	  // initialize position
 	  $(this).css({

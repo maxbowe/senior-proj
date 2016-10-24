@@ -47,10 +47,15 @@
 		<a><img class="introarrow1" src="../images/arrow.png"></img></a>
 		</div> 
 		<img src="../images/defBox.png" id="CorrCanvas"></img>
-					<a class="corrX1"></a><a class="corrY1"></a>
-					<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
+<!-- 					<a class="corrX1"></a><a class="corrY1"></a>
+ -->					<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
 					<p id="CorrGraph2">Not only does <span style="color:red;">The Red Team</span> move close to the 50% for winning chances, <span style="color:blue;">the Blue Team</span> does as well. There is a very close relationship between these two stats. Because the stats are from two opposing teams, they will always being moving with each other.  </p>
 					<p id="CorrGraph3">This is as extreme as the two stats can go.</p>
+							 <div class ="row">
+	 <div class ="medium-2 columns">	</div>	 <div class ="medium-8 columns"> 
+
+	<canvas id="canvas" style="display: block; width: 1100px; height: 500px;"></canvas></div>		 <div class ="medium-2 columns">
+</div></row>
 
 		<p id="introtext2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses. However a metric like shot attempts (better known as CORSI, but we will be getting more into that in <a id="toplink">Possession Metrics and Rate Stats</a>) is much more repeatable because it relies on less separate factors, although those factors still do exist).
 		<canvas id="RepCanvas" width="300" height="300"></canvas>
@@ -106,7 +111,7 @@
 
 	<script src="../js/menu.js">		
 		</script>
-		<script src="../js/corrChart.js">
+		<script src="../js/corrBubbleChart.js">
 		</script>
 
   </body>

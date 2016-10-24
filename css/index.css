@@ -139,7 +139,7 @@ position:absolute;
 #CorrGraph1,#CorrGraph2, #CorrGraph3{
 	font-family:"Calibri";
 	position:absolute;
-	top:72%;
+	top:68%;
 	left:27%;
 	z-index:30;
 	font-size:1.5em;
@@ -187,4 +187,13 @@ p.crosbyspeech  	{
 	border-Radius:25px;
 	z-index:25;
 
+}
+#canvas{
+	background-color:white;
+	/* width:900px !important;
+	height:400px !important; */
+ 	position:absolute;
+	top:26%;
+	left:27%;
+	z-index:25;
 }
