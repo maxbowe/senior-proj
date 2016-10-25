@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hockey analytics</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel='shortcut icon' href='../images/puck.png' type='image/x-icon'/ >
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="../node_modules/chart.js/dist/Chart.bundle.js"></script>
+	<script src="../js/blast/jquery.blast.js"></script>
+	<script src="../js/velocity/velocity.js"></script>
+	
+
+
+  </head>
+  
+  <body>
+
+	<div id = "menubutton">
+		<a onclick="displayDate()"><img src="../images/menu.png" alt="Menu"/></a>
+		<p id="menuClick"></p>
+
+	</div>
+	<div class ="row">
+		<p id="toplink">
+			<a id= "subsection">Possession and Metric Rate Stats</a>
+			
+			<br>
+			<br>
+			<br>
+		</p>
+
+					<img class="crosby" src="../images/crosby.png"></img>
+					<a><img class="crosbyspeech" src="../images/speech-bubble-crosby.png"/>
+					<a class="ballBounce"></a>
+					<p class="crosbyspeech" id="crosby1">Speech bubbles make what I say a precious gift and nothing else. For here and for elsewhere. Thank god! If I had to explain too much I might...</p>
+					<p class="crosbyspeech" id="crosby2">Words will eventually fill up much more space here </p>
+					<p class="crosbyspeech" id="crosby3">AND WORDS WILL BE HERE</p>
+					<p class="crosbyspeech" id="crosby4">tHIS IS ANOTHER ONE TOOOOOO, click to go back home</p>
+					</a>
+
+		<img class="introbg" src="../images/speech-box.png"></img>
+		<div id="introtext1"><p id=headline>Why do people care about hockey analytics?</p>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The purpose of analytics is to figure out why an outcome happens, how to reproduce that outcome and what the best way is to assure that outcome happens again. Finding <a class="define" id="defCorrelation">correlations</a> between events is extremely important. For example, there is a very high correlation between scoring more goals than your opponent and winning. Even if that seems obvious, its an important relationship to make, because you can then start to look at bigger questions, like “what allows my team to score more goals than the other?”  and “how do I make sure the other team doesn’t score many goals?”. Even questions like “When is the best time to pull my goalie (goalie getting yanked offstage with cane)?” can be answered with analytics.
+		<a><img class="introarrow1" src="../images/arrow.png"></img></a>
+		</div>
+		<a class="correlation">
+		<img src="../images/defBox.png" id="CorrCanvas"></img>
+					<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
+					<p id="CorrGraph2">Not only does <span style="color:red;">The Red Team</span> move close to the 50% for winning chances, <span style="color:blue;">the Blue Team</span> does as well. There is a very close relationship between these two stats. Because the stats are from two opposing teams, they will always being moving with each other. This is as extreme as the two stats can go. </p>
+					<p id="CorrGraph3">You can see that the two teams,<span style="color:red;"> Red </span>and <span style="color:blue;"> blue</span>, have an extremely high correlation. The must add up to 100%, so when one goes up, the other must come down.  </p>
+							 <div class ="row">
+	 <div class ="medium-2 columns">	</div>	 <div class ="medium-8 columns"> 
+
+	<canvas id="canvas" style="display: block; width: 1100px; height: 500px;"></canvas></div>		 <div class ="medium-2 columns">
+</div></div></a>
+
+		<p id="introtext2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses. However a metric like shot attempts (better known as CORSI, but we will be getting more into that in <a id="toplink">Possession Metrics and Rate Stats</a>) is much more repeatable because it relies on less separate factors, although those factors still do exist).
+		<img src="../images/defBox.png" id="RepCanvas"></img>
+
+		<canvas id="Repeat" width="300" height="300"></canvas>
+		
+		<a><img class="introbackarrow2" src="../images/backarrow.png"></img></a>
+		<a><img class="introarrow2" src="../images/arrow.png"></img></a>
+
+		</p>
+		<p id="introtext3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since SaberMetrics blew up Baseball, sports analytics are a rapidly growing field, especially in the public sphere. Though teams have always had some sort of internal analytics teams, the public hasn’t had access to it the way we do now. More people having more access has led to some tremendous innovations in sports analytics, which have begun to trickle its way into professional sports leagues. There is still plenty of work to go into hockey analytics, some of which we do not have the technology or manpower to track yet, but the more we learn the more we and understand the game.
+		<a><img class="introbackarrow3" src="../images/backarrow.png"></img></a>
+		<a><img class="introarrow3" src="../images/arrow.png"></img></a>
+		</p>
+		<p id="introtext4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This involves bucking classic notions, like the important of a player’s size, fights energize a team, and +/- is the best metric to understand how a player performs. This creates a rift between modern analytic workers, and classic old style people. It transforms a game of energy and excitement to a game of numbers and probabilities, which can understandably suck the fun out for some people. Turning a classic sport into a random number generator isn’t everyone’s cup of tea, which is why analytics aren’t going to be for everyone. Even players and coaches shouldn’t care about every analytic, and many statistics end up being most important to managers for player evaluation. There will always be complications of numbers due to player use, coach strategies and who they are playing with, but with enough work analytics can erase those concerns.
+		<a><img class="introbackarrow4" src="../images/backarrow.png"></img></a>
+		<!-- <a><img class="introX" src="../images/x.png"></img></a> -->
+		</p>
+		</div>
+    <div class="row fullWidth">	
+		<div class ="medium-4 columns">
+			<p id="leftlink">
+				<a id= "subsection"  >Stats gone bad</a>
+				<br>
+				<br>
+				<br>
+			</p>
+		</div>
+	
+		<div class ="medium-4 columns">
+			<p>
+				<!-- <a class="centerpuck" > --><a><img class="puck" src="../images/puck.png" alt="intro to analytics"></a>
+				<!-- </a> -->
+			</p>
+			
+			</div>	
+		 <div class ="medium-4 columns">
+			<p id="rightlink">
+				<a id= "subsection">Microstats and the<br> Future of Analytics</a>
+				<br>
+				<br>
+				<br>
+			</p>	
+		</div>
+	</div>
+	<div class ="row">
+		
+		<p id="bottomlink">
+			
+			<a id= "subsection">Combating Perception</a>
+			
+		</p>
+	</div>
+		  		
+
+	<script src="../js/menu.js">		
+		</script>
+		<script src="../js/corrBubbleChart.js">
+		</script>
+	<script src="../js/repChart.js">
+		</script>
+  </body>
+  
+  </html>

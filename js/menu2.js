@@ -175,9 +175,11 @@ function hideCorr(){
 		$("#defCorrelation").css({
 		});
 		$("#CorrGraph1").hide();
+		corr3();
 		$("#CorrGraph1").hide();
 		$("#CorrGraph2").hide();
 			$("#CorrGraph3").hide();
+			
 	
 }
 var CorrGraph =1;
@@ -186,7 +188,7 @@ var CorrGraph =1;
 $("#defCorrelation").click(function(){
 	if(defCorrel){
 		hideCorr();
-				$("#canvas").hide();
+	$("#canvas").hide();
 
 		defCorrel= false;
 	}
@@ -198,7 +200,7 @@ $("#defCorrelation").click(function(){
 		$("#CorrGraph1").show();
 		$("#canvas").show();
 		CorrGraph =1;
-
+		corrUpdate(3);
 		
 		defCorrel=true;
 		
@@ -208,17 +210,22 @@ $("#defCorrelation").click(function(){
 
 $(".correlation").click(function(){
  if(CorrGraph==1){
+	 		$(".corrX1").show();
+			$(".corrY1").show();
 	$("#CorrGraph1").hide();
 	CorrGraph=2;
 	corrUpdate(1);
 			$("#CorrGraph2").show();
 
+	 corr1();
  }
 	else if (CorrGraph==2){
 		$("#CorrGraph2").hide();
 	$("#CorrGraph3").show();
+			CorrGraph=3;
+
 		corrUpdate(2);
-		CorrGraph=3;
+		corr2();
 	}
 	else if(CorrGraph==3){
 		CorrGraph=4;
@@ -226,80 +233,126 @@ $(".correlation").click(function(){
 		$("#CorrGraph3").hide();
 		$("#canvas").hide();
 
+		$(".corrX1").hide();
+		$(".corrY1").hide();
 		corrUpdate(3);
 
+		corr3();
 		defCorrel = false;
 		}
 });
+function corr1(){
+	$(".corrX1").velocity({
+	  borderRadius: "25px",
+	  width: "45px",
+	  height:"45px",
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  top:"41%",
+		left:"48%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+	$(".corrY1").velocity({
+	  borderRadius: "25px",
+	  width: "45px",
+	  height:"45px",
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  top:"44%",
+		left:"45%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+}
+function corr2(){
+	$(".corrX1").velocity({
 
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "blue",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  	 top:"30%",
+		left:"58%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+	$(".corrY1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  	 top:"52%",
+		left:"32%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+}
+function corr3(){
+	$(".corrX1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "blue",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	  	 top:"33%",
+	left:"55%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+	$(".corrY1").velocity({
+
+	  paddingLeft: "0",
+	  paddingRight: "0",
+	  color: "#fff",
+	  borderColor: "#8CC152",
+	  boxShadowX: "0",
+	  boxShadowY: "0",
+	 top:"50%",
+	left:"34%"
+	}, {
+		duration: 350,
+		easing: "easeInQuad"
+	});
+}
 var defRep = false;
-$("#repGraph").hide();
+
 $("#RepCanvas").hide();
-$("#RepGraph1").hide();
-$("#RepGraph2").hide();
-$("#RepGraph3").hide();
 $("#defRepeat").click(function(){
 	if(defRep){
 		$("#RepCanvas").hide();
-	$("#repGraph").hide();
+		$("#defRepeat").css({
+		});
 		defRep= false;
 	}
 	else{
-		$(".repeatability").show();
 		$("#RepCanvas").show();
-		$("#repGraph").show();
-		$("#RepGraph1").show();
-
 
 		defRep=true;
 	}
 
 });
-var repGraph=1;
-//repeatability clickthrough
-$(".repeatability").click(function(){
- if(repGraph==1){
-	$("#RepGraph1").hide();
-	repGraph=2;
-	repUpdate(1);
-			$("#RepGraph2").show();
 
- }
-	else if (repGraph==2){
-		$("#RepGraph2").hide();
-	$("#RepGraph3").show();
-		repUpdate(2);
-		repGraph=3;
-	}
-	else if(repGraph==3){
-		repGraph=4;
-		
-
-		repUpdate(3);
-
-		}
-	else if (repGraph==4){
-		repUpdate(4);
-		repGraph=5;
-
-
-		}
-else if (repGraph==5){
-		repUpdate(5);
-		repGraph=6;
-
-
-		}
-else if (repGraph==6){
-		repUpdate(6);
-		$("#CorrCanvas").hide();
-		$("#RepGraph3").hide();
-		$(".repeatability").hide();
-		repGraph=1;
-		defRep = false;
-
-		}
-});
 //controls arrow for intro section
 $(".introarrow1").click(function(){
 	$("#introtext1").hide();
@@ -368,7 +421,29 @@ $(".introbackarrow4").click(function(){
 			
 
 });
+/* $(".introX").click(function(){
+	$(".puck").animate({
+				height: '+=100px',
+				width: '+=100px',
+				bottom: "0px",
+				top:"-=40%",
+				left:"-=3%",
+			
 
+			});
+		$(".puck").attr("src", "../images/puck.png");
+
+	
+
+	$("body").css({
+				'background-size': '100%',
+				'background-position': 'center'
+			});
+			returnToHome();
+
+
+		introON=false;
+}); */
 /* actives toplink */
 var toplinkON = false;
 $(".crosby").hide();
@@ -521,7 +596,74 @@ $("#bottomlink").click(function(){
 	}
 });  
 
+ //sample chart
+/*  var redNum = crosbySlideNum;
 
+ var ctx = document.getElementById("CorrCanvas");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow"],
+        datasets: [{
+            label: '# of Votes',
+            data: [redNum, 4, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    min:0,
+					beginAtZero:true
+					
+                }
+            }]
+        },
+		legend: {
+            display: false,
+			fontSize: 55
+        },
+		title: {
+                    display: true,
+                    text: 'SAMPLE CHART',
+					fontSize: 42
+		}
+    }
+});
+var cty = document.getElementById("RepCanvas");
+var myPieChart = new Chart(cty,{
+    type: 'pie',
+    data: { labels: [
+        "Red",
+        "Blue",
+        "Yellow"
+    ],
+    datasets: [
+        {
+            data: [25, 50, 100],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+	}]}
+}); */
 var animate1 = $("#introtext1").blast({ delimiter: "word" });
 function introtext1Start(){animate1.each(function(i) {
   // initialize position
@@ -590,3 +732,4 @@ function introtext4Start(){ animate4.each(function(i) {
 	  .animate({ opacity: 1}, 500);
 	});
 }
+
