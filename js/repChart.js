@@ -33,24 +33,39 @@ var repNum;
 }
 
 var repData = { labels: [
-        "Red",
-        "Blue"
+        "# of Heads",
+        "# of tails"
     ],
     datasets: [
         {
             data: [900, 1000],
             backgroundColor: [
-                "#FF6384",
-                "#36A2EB"
+                "#E8C07F",
+                "#58DAFF"
             ],
             hoverBackgroundColor: [
-                "#FF6384",
-                "#36A2EB"
+                "#E89C32",
+                "#12C5FF"
             ]
     }]}
 
  var cty = document.getElementById("repGraph").getContext("2d");
  repChart = new Chart(cty, {
     type: 'pie',
-    data: repData,	
+    data: repData,
+    options:{
+        title:{
+            display:true,
+            text:"Flipping coins",
+            fontSize:28,
+            fontFamily:"Calibri"  
+            },
+         legend: {
+            display: true,
+            position:'bottom',
+            labels: {
+                fontSize: 20
+            }
+        }
+    }	
 		 });

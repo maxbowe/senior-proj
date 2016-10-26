@@ -133,7 +133,7 @@ position:absolute;
 	position:absolute;
 	z-index:500;
 	top:22%;
-	left:20%;
+	left:22%;
 	z-index:5;
 }
 
@@ -141,7 +141,7 @@ position:absolute;
 	font-family:"Calibri";
 	position:absolute;
 	top:68%;
-	left:27%;
+	left:29%;
 	z-index:30;
 	font-size:1.5em;
 	text-align:left;
@@ -175,8 +175,8 @@ p.crosbyspeech  	{
 	/* width:900px !important;
 	height:400px !important; */
  	position:absolute;
-	top:26%;
-	left:27%;
+	top:28%;
+	left:29%;
 	z-index:25;
 }
 .correlation{

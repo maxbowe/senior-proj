@@ -1,48 +1,48 @@
 var introPuckHome =false;
 /* date on menu click*/
 function displayDate() {
-    document.getElementById("menuClick").innerHTML = Date();
+	document.getElementById("menuClick").innerHTML = Date();
 }
 function changeImage(obj,img) {
-			  obj.src = img;
-			}
+	obj.src = img;
+}
 //returns to home state
 function returnToHome(){
-			$("#leftlink").show();
-			$("#toplink").show();
-			$("#rightlink").show();
-			$("#bottomlink").show();
-			$("#menubutton").show();
-			$("#introtext1").hide();
-			$("#introtext2").hide();
-			$("#introtext3").hide();
-			$("#introtext4").hide();
-			$(".crosby").hide();
-			$(".crosbyspeech").hide();
-			$(".introbg").hide();
-			hideCorr();
-					$("#canvas").hide();
+	$("#leftlink").show();
+	$("#toplink").show();
+	$("#rightlink").show();
+	$("#bottomlink").show();
+	$("#menubutton").show();
+	$("#introtext1").hide();
+	$("#introtext2").hide();
+	$("#introtext3").hide();
+	$("#introtext4").hide();
+	$(".crosby").hide();
+	$(".crosbyspeech").hide();
+	$(".introbg").hide();
+	hideCorr();
+	$("#canvas").hide();
 
 
-			canvasReset();
-					introON=false;
+	canvasReset();
+	introON=false;
 }
 function returnToHomeFromLink(){
-				returnToHome();	
+	returnToHome();	
 
 	$(".puck").animate({
-				height: '+=450px',
-				width: '+=450px',
-				bottom: "0px",
-				top:"+=25%",
-				left:"+=35%"
-			});
-			$("body").css({
-				'background-size': '100%',
-				'background-position': 'center'
-			});
+		height: '+=450px',
+		width: '+=450px',
+		bottom: "0px",
+		top:"+=25%",
+		left:"+=35%"
+	});
+	$("body").css({
+		'background-size': '100%',
+		'background-position': 'center'
+	});
 
-			}
+}
 function hideHome(){
 	$("#leftlink").hide();
 	$("#toplink").hide();
@@ -69,38 +69,38 @@ $("#introtext4").hide();
 $(".introbg").hide();
 
 $(".puck").click(function(){
-	 if(introPuckHome){
-	$(".puck").animate({
-		height: '+=450px',
-		width: '+=450px',
-		top:"+=-23%",
-		left:"-=28%"
-	});
-	introPuckHome=false;
-	$("body").css({
-				'background-size': '100%',
-				'background-position': 'center'
-			});
-			changeImage(this,"../images/puck.png");
-			returnToHome();
+	if(introPuckHome){
+		$(".puck").animate({
+			height: '+=450px',
+			width: '+=450px',
+			top:"+=-23%",
+			left:"-=28%"
+		});
+		introPuckHome=false;
+		$("body").css({
+			'background-size': '100%',
+			'background-position': 'center'
+		});
+		changeImage(this,"../images/puck.png");
+		returnToHome();
 	}
 	else if(introON){
 		$(".puck").animate({
-				height: '+=100px',
-				width: '+=100px',
-				bottom: "0px",
-				top:"-=40%",
-				left:"-=3%"
+			height: '+=100px',
+			width: '+=100px',
+			bottom: "0px",
+			top:"-=40%",
+			left:"-=3%"
 
-				
+			
 
-			});
-			$("body").css({
-				'background-size': '100%',
-				'background-position': 'center'
-			});
-			changeImage(this,"../images/puck.png");
-			returnToHome();
+		});
+		$("body").css({
+			'background-size': '100%',
+			'background-position': 'center'
+		});
+		changeImage(this,"../images/puck.png");
+		returnToHome();
 
 
 		introON=false;
@@ -109,9 +109,9 @@ $(".puck").click(function(){
 	/* returns puck to normal */
 	else if(leftlinkON) {
 		
-			returnToHomeFromLink();
+		returnToHomeFromLink();
 
-			
+		
 		leftlinkON=false;
 	}
 	/* returns puck to normal */
@@ -141,52 +141,52 @@ $(".puck").click(function(){
 		changeImage(this,"../images/home.png");
 		$(".introbg").show();
 
-				introtext1Start();
+		introtext1Start();
 
 
 		$(".puck").animate({
-				height: '-=100px',
-				width: '-=100px',
-				top:"+=40%",
-				left:"+=3%"
-			});
-			$("body").css({
-				'background-size': '150%',
-				'background-position': 'center'
-				   
+			height: '-=100px',
+			width: '-=100px',
+			top:"+=40%",
+			left:"+=3%"
+		});
+		$("body").css({
+			'background-size': '150%',
+			'background-position': 'center'
+			
 
-			});
-			hideHome();		
-			
-			
-			$("#introtext1").show();
+		});
+		hideHome();		
+		
+		
+		$("#introtext1").show();
 
 		introON=true;
 	}
 });  
 /* brings up defintion of correlation */
- var defCorrel = false;
+var defCorrel = false;
 $("#CorrCanvas").hide();
 $("#CorrGraph1").hide();
 $("#CorrGraph2").hide();
 $("#CorrGraph3").hide();
 function hideCorr(){
 	$("#CorrCanvas").hide();
-		$("#defCorrelation").css({
-		});
-		$("#CorrGraph1").hide();
-		$("#CorrGraph1").hide();
-		$("#CorrGraph2").hide();
-			$("#CorrGraph3").hide();
+	$("#defCorrelation").css({
+	});
+	$("#CorrGraph1").hide();
+	$("#CorrGraph1").hide();
+	$("#CorrGraph2").hide();
+	$("#CorrGraph3").hide();
 	
 }
 var CorrGraph =1;
-		$("#canvas").hide();
+$("#canvas").hide();
 
 $("#defCorrelation").click(function(){
 	if(defCorrel){
 		hideCorr();
-				$("#canvas").hide();
+		$("#canvas").hide();
 
 		defCorrel= false;
 	}
@@ -207,16 +207,16 @@ $("#defCorrelation").click(function(){
 });
 
 $(".correlation").click(function(){
- if(CorrGraph==1){
-	$("#CorrGraph1").hide();
-	CorrGraph=2;
-	corrUpdate(1);
-			$("#CorrGraph2").show();
+	if(CorrGraph==1){
+		$("#CorrGraph1").hide();
+		CorrGraph=2;
+		corrUpdate(1);
+		$("#CorrGraph2").show();
 
- }
+	}
 	else if (CorrGraph==2){
 		$("#CorrGraph2").hide();
-	$("#CorrGraph3").show();
+		$("#CorrGraph3").show();
 		corrUpdate(2);
 		CorrGraph=3;
 	}
@@ -229,7 +229,7 @@ $(".correlation").click(function(){
 		corrUpdate(3);
 
 		defCorrel = false;
-		}
+	}
 });
 
 var defRep = false;
@@ -241,7 +241,12 @@ $("#RepGraph3").hide();
 $("#defRepeat").click(function(){
 	if(defRep){
 		$("#RepCanvas").hide();
-	$("#repGraph").hide();
+		$("#repGraph").hide();
+		$("#RepGraph1").hide();
+		$("#RepGraph2").hide();
+		$("#RepGraph3").hide();
+		repGraph=1;
+		repUpdate(6);
 		defRep= false;
 	}
 	else{
@@ -250,7 +255,6 @@ $("#defRepeat").click(function(){
 		$("#repGraph").show();
 		$("#RepGraph1").show();
 
-
 		defRep=true;
 	}
 
@@ -258,16 +262,16 @@ $("#defRepeat").click(function(){
 var repGraph=1;
 //repeatability clickthrough
 $(".repeatability").click(function(){
- if(repGraph==1){
-	$("#RepGraph1").hide();
-	repGraph=2;
-	repUpdate(1);
-			$("#RepGraph2").show();
+	if(repGraph==1){
+		$("#RepGraph1").hide();
+		repGraph=2;
+		repUpdate(1);
+		$("#RepGraph2").show();
 
- }
+	}
 	else if (repGraph==2){
 		$("#RepGraph2").hide();
-	$("#RepGraph3").show();
+		$("#RepGraph3").show();
 		repUpdate(2);
 		repGraph=3;
 	}
@@ -277,20 +281,20 @@ $(".repeatability").click(function(){
 
 		repUpdate(3);
 
-		}
+	}
 	else if (repGraph==4){
 		repUpdate(4);
 		repGraph=5;
 
 
-		}
-else if (repGraph==5){
+	}
+	else if (repGraph==5){
 		repUpdate(5);
 		repGraph=6;
 
 
-		}
-else if (repGraph==6){
+	}
+	else if (repGraph==6){
 		repUpdate(6);
 		$("#CorrCanvas").hide();
 		$("#RepGraph3").hide();
@@ -298,7 +302,7 @@ else if (repGraph==6){
 		repGraph=1;
 		defRep = false;
 
-		}
+	}
 });
 //controls arrow for intro section
 $(".introarrow1").click(function(){
@@ -315,7 +319,7 @@ $(".introbackarrow2").click(function(){
 	$("#introtext2").hide();
 	introtext1Start();
 	animate2.stop();
-		canvasReset();
+	canvasReset();
 
 
 
@@ -363,9 +367,9 @@ $(".introbackarrow4").click(function(){
 		top:"+=17%",
 		left:"-=25%"
 	});
-		introPuckHome =false;
+	introPuckHome =false;
 
-			
+	
 
 });
 
@@ -386,8 +390,8 @@ $("#toplink").click(function(){
 			width: '-=450px',
 			top:"-=25%",
 			left:"-=35%"	
-			});
-			$("body").css({
+		});
+		$("body").css({
 			'background-size': '200%',
 			'background-position': '50% 0%'
 		});
@@ -403,31 +407,31 @@ $("#toplink").click(function(){
 
 	}
 });  
- var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
- $(".crosbyspeech").click(function(){
-				console.log(crosbySlideNum);
+var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
+$(".crosbyspeech").click(function(){
+	console.log(crosbySlideNum);
 
-		if(crosbySlideNum == 4){
-			crosbySlideNum = 1;
-			crosbySlide= "#crosby" + crosbySlideNum;
+	if(crosbySlideNum == 4){
+		crosbySlideNum = 1;
+		crosbySlide= "#crosby" + crosbySlideNum;
 
-			returnToHomeFromLink();
-			toplinkON=false;
-
-
-
-		}
-		
-		else{			
-			$(crosbySlide).hide();
-			crosbySlideNum+=1;
-			crosbySlide= "#crosby" + crosbySlideNum;
-			$(crosbySlide).show();
-				console.log(crosbySlideNum);
+		returnToHomeFromLink();
+		toplinkON=false;
 
 
-		} 
-		
+
+	}
+	
+	else{			
+		$(crosbySlide).hide();
+		crosbySlideNum+=1;
+		crosbySlide= "#crosby" + crosbySlideNum;
+		$(crosbySlide).show();
+		console.log(crosbySlideNum);
+
+
+	} 
+	
 
 });
 
@@ -440,23 +444,23 @@ $("#leftlink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-				height: '-=450px',
-				width: '-=450px',
-				top:"-=25%",
-				left:"-=35%"
-			});
-			$("body").css({
-				'background-size': '180%',
-				'background-position': '0% 50%'
+			height: '-=450px',
+			width: '-=450px',
+			top:"-=25%",
+			left:"-=35%"
+		});
+		$("body").css({
+			'background-size': '180%',
+			'background-position': '0% 50%'
 
 
-				   
-
-			});
-			hideHome();			
-
-			$("#lefttext1").show();
 			
+
+		});
+		hideHome();			
+
+		$("#lefttext1").show();
+		
 		leftlinkON=true;
 	}
 });  
@@ -469,23 +473,23 @@ $("#rightlink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-				height: '-=450px',
-				width: '-=450px',
-				top:"-=25%",
-				left:"-=35%"
-			});
-			$("body").css({
-				'background-size': '180%',
-				'background-position': '100% 50%'
+			height: '-=450px',
+			width: '-=450px',
+			top:"-=25%",
+			left:"-=35%"
+		});
+		$("body").css({
+			'background-size': '180%',
+			'background-position': '100% 50%'
 
 
-				   
-
-			});
-			hideHome();			
-
-			$("#lefttext1").show();
 			
+
+		});
+		hideHome();			
+
+		$("#lefttext1").show();
+		
 		rightlinkON=true;
 	}
 });  
@@ -499,24 +503,24 @@ $("#bottomlink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-				height: '-=450px',
-				width: '-=450px',
-				top:"-=25%",
-				left:"-=35%",
+			height: '-=450px',
+			width: '-=450px',
+			top:"-=25%",
+			left:"-=35%",
 
-			});
+		});
 
-			$("body").css({
-				'background-size': '200%',
-				'background-position': '50% 100%'
-				   
-
-			});
-
-			hideHome();			
-			$("#lefttext1").show();
-
+		$("body").css({
+			'background-size': '200%',
+			'background-position': '50% 100%'
 			
+
+		});
+
+		hideHome();			
+		$("#lefttext1").show();
+
+		
 		bottomlinkON=true;
 	}
 });  
@@ -526,9 +530,9 @@ var animate1 = $("#introtext1").blast({ delimiter: "word" });
 function introtext1Start(){animate1.each(function(i) {
   // initialize position
   $(this).css({
-    position: 'relative',
-    left: 0,
-	opacity:0
+  	position: 'relative',
+  	left: 0,
+  	opacity:0
   })
 
   // Delay: we don't want to animate
@@ -543,9 +547,9 @@ var animate2 = $("#introtext2").blast({ delimiter: "word" });
 function introtext2Start(){ animate2.each(function(i) {
 	  // initialize position
 	  $(this).css({
-		position: 'relative',
-		left: 0,
-		opacity:0
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
 	  })
 
 	  // Delay: we don't want to animate
@@ -560,9 +564,9 @@ var animate3 = $("#introtext3").blast({ delimiter: "word" });
 function introtext3Start(){ animate3.each(function(i) {
 	  // initialize position
 	  $(this).css({
-		position: 'relative',
-		left: 0,
-		opacity:0
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
 	  })
 
 	  // Delay: we don't want to animate
@@ -577,9 +581,9 @@ var animate4 = $("#introtext4").blast({ delimiter: "word" });
 function introtext4Start(){ animate4.each(function(i) {
 	  // initialize position
 	  $(this).css({
-		position: 'relative',
-		left: 0,
-		opacity:0
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
 	  })
 
 	  // Delay: we don't want to animate
