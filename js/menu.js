@@ -20,6 +20,8 @@ function returnToHome(){
 	$("#introtext8").hide();
 	$(".crosby").hide();
 	$(".crosbyspeech").hide();
+	$(".bergeron").hide();
+	$(".bergyspeech").hide();
 	$(".introbg").hide();
 	hideCorr();
 	$("#canvas").hide();
@@ -150,6 +152,7 @@ $(".puck").click(function(){
 		$(".introbg").show();
 
 		introtext1Start();
+				introPart=1;
 
 
 		$(".puck").animate({
@@ -323,151 +326,24 @@ $(".repeatability").click(function(){
 	}
 });
 //controls arrow for intro section
-$(".introarrow1").click(function(){
-	$("#introtext1").hide();
-	$("#introtext2").show();
-	$("#CorrCanvas").hide();
-	introtext2Start();
-	animate1.stop();
-	canvasReset();
+var introPart;
+$("#introbackarrow").hide();
 
-});
-$(".introbackarrow2").click(function(){
-	$("#introtext1").show();
-	$("#introtext2").hide();
-	introtext1Start();
-	animate2.stop();
-	canvasReset();
+$(".introarrow").click(function(){
+		$("#introtext"+introPart).hide();
+		introPart++;
+		$("#introtext"+introPart).show();
 
 
-
-});
-$(".introarrow2").click(function(){
-	$("#introtext2").hide();
-	$("#introtext3").show();
-	introtext3Start();
-	animate2.stop();
-
-	canvasReset();
-
-});
-$(".introbackarrow3").click(function(){
-	$("#introtext2").show();
-	$("#introtext3").hide();
-	animate3.stop();
-	introtext2Start();
+ });
+$(".introbackarrow").click(function(){
+	$("#introtext"+introPart).hide();
+		introPart--;
+		$("#introtext"+introPart).show();
 
 
-});
+ });
 
-
-$(".introarrow3").click(function(){
-	$("#introtext3").hide();
-	$("#introtext4").show();
-	introtext4Start();
-	animate3.stop();
-
-	canvasReset();
-
-});
-$(".introbackarrow4").click(function(){
-	$("#introtext3").show();
-	$("#introtext4").hide();
-	animate4.stop();
-	introtext3Start();
-
-
-});
-$(".introarrow4").click(function(){
-	$("#introtext4").hide();
-	$("#introtext5").show();
-	introtext5Start();
-	animate4.stop();
-
-	canvasReset();
-
-});
-$(".introbackarrow5").click(function(){
-	$("#introtext4").show();
-	$("#introtext5").hide();
-	animate5.stop();
-	introtext4Start();
-
-
-});
-
-$(".introarrow5").click(function(){
-	$("#introtext5").hide();
-	$("#introtext6").show();
-	introtext6Start();
-	animate5.stop();
-
-	canvasReset();
-
-});
-$(".introbackarrow6").click(function(){
-	$("#introtext5").show();
-	$("#introtext6").hide();
-	animate6.stop();
-	introtext5Start();
-
-
-});
-$(".introarrow6").click(function(){
-	$("#introtext6").hide();
-	$("#introtext7").show();
-	introtext7Start();
-	animate6.stop();
-
-	canvasReset();
-
-});
-$(".introbackarrow7").click(function(){
-	$("#introtext6").show();
-	$("#introtext7").hide();
-	animate7.stop();
-	introtext6Start();
-
-
-});
-$(".introarrow7").click(function(){
-	$("#introtext7").hide();
-	$("#introtext8").show();
-	introtext8Start();
-	animate7.stop();
-
-	$(".puck").animate({
-		height: '-=350px',
-		width: '-=350px',
-		top:"-=10%",
-		left:"+=25%",
-		zIndex:"2"
-	});
-	introPuckHome =true;
-});
-$(".introbackarrow8").click(function(){
-	$("#introtext7").show();
-	$("#introtext8").hide();
-	animate8.stop();
-	introtext7Start();
-	$(".puck").animate({
-		height: '+=350px',
-		width: '+=350px',
-		top:"+=17%",
-		left:"-=25%"
-	});
-	introPuckHome =false;
-
-
-
-});
-// does action on space bar press
-// $(window).keypress(function (e) {
-//   if (e.keyCode === 0 || e.keyCode === 32) {
-//     e.preventDefault()
-//     console.log('Space pressed')
-//   }
-// })
 /* actives toplink */
 var toplinkON = false;
 $(".crosby").hide();
@@ -477,7 +353,7 @@ $(".crosbyspeech").hide();
 $("#toplink").click(function(){
 
 	if (introON){
-		$(".crosby").show();
+		$(".crosby").hide();
 		hideHome();
 				toplinkON=true;
 				introOn=false;
@@ -500,9 +376,7 @@ $("#toplink").click(function(){
 		$("#crosby2").hide();
 		$("#crosby3").hide();
 		$("#crosby4").hide();
-		$("#toptext1").show();	
 		toplinkON=true;
-
 
 	}
 });  
@@ -593,6 +467,12 @@ $("#rightlink").click(function(){
 	}
 });  
 /* actives bottomlink */
+$(".bergeron").hide();
+$(".bergyspeech").hide();
+$("#bergy1").hide();
+$("#bergy2").hide();
+$("#bergy3").hide();
+$("#bergy4").hide();
 
 var bottomlinkON = false;
 $("#bottomlink").click(function(){
@@ -615,16 +495,46 @@ $("#bottomlink").click(function(){
 
 
 		});
+			$(".bergeron").show();
+			$(".bergyspeech").show();
+			$("#bergy2").hide();
+$("#bergy3").hide();
+$("#bergy4").hide();
 
 		hideHome();			
-		$("#lefttext1").show();
 
-
+		
 		bottomlinkON=true;
 	}
 });  
 
+var bergySlideNum =1 , bergySlide= "#bergy1" ;
+$(".bergyspeech").click(function(){
+	console.log(bergySlideNum);
 
+	if(bergySlideNum == 4){
+		bergySlideNum = 1;
+		bergySlide= "#bergy" + bergySlideNum;
+
+		returnToHomeFromLink();
+		bottomlinkON=false;
+
+
+
+	}
+
+	else{			
+		$(bergySlide).hide();
+		bergySlideNum+=1;
+		bergySlide= "#bergy" + bergySlideNum;
+		$(bergySlide).show();
+		console.log(bergySlideNum);
+
+
+	} 
+
+
+});
 var animate1 = $("#introtext1").blast({ delimiter: "word" });
 function introtext1Start(){animate1.each(function(i) {
   // initialize position

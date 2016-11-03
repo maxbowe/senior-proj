@@ -113,13 +113,13 @@ height: 700px;
 
 }
 
-.introarrow1, .introarrow2, .introarrow3,.introarrow4,.introarrow5,.introarrow6,.introarrow7{
+.introarrow{
 	position:absolute;
 	top:110%;
 	right:0%;
 }
 
-.introbackarrow2, .introbackarrow3, .introbackarrow4,.introbackarrow5,.introbackarrow6,.introbackarrow7,.introbackarrow8{
+.introbackarrow{
 position:absolute;
 	top:110%;
 	left:0%;
@@ -144,17 +144,17 @@ position:absolute;
 	color:black;
 }
 
-.crosby{
+.crosby, .bergeron{
 	position:absolute;
 	bottom:5%;
 	height:27%;
 }
-.crosbyspeech{
+.crosbyspeech, .bergyspeech{
 	position:absolute;
 	bottom:5%;
 	left:35%;
 }
-p.crosbyspeech  	{
+p.crosbyspeech, p.bergyspeech 	{
 	font-family: "Calibri";
 	font-size: 1.4em;
 	width:600px;
