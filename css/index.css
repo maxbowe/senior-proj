@@ -24,9 +24,8 @@ p {
 }
 #toplink{
 	top:5%;
-left:50%	
-	position:absolute;
-
+left:50%;
+z-index:500;
 }
 #bottomlink{
 	position:absolute;
@@ -87,11 +86,11 @@ left:50%
 .define{
 color: rgb(224, 136, 136);
 }
-#introtext1, #introtext2, #introtext3, #introtext4{
+#introtext1, #introtext2, #introtext3, #introtext4,#introtext5, #introtext6,#introtext7, #introtext8{
 font-family:"Calibri";
 /* font-weight:bold;	
  */font-size:1.75em;
-top:3%;
+top:1%;
 position:absolute;
 left:25%;
 right:30%;
@@ -101,32 +100,28 @@ width:980px;
 text-align:left;
 color: rgb(214,218,223);
 }
+#introtext1, #introtext2, #introtext3, #introtext4,#introtext5, #introtext6,#introtext7,#introtext8{
+	font-size:3em;
+}
 .introbg{
 position: absolute;
 top: 0%;
 left: 22%;
 z-index: -3;
 width: 1080px;
-height: 600px;
+height: 700px;
 
 }
 
-.introarrow1, .introarrow2, .introarrow3{
+.introarrow1, .introarrow2, .introarrow3,.introarrow4,.introarrow5,.introarrow6,.introarrow7{
 	position:absolute;
-	top:93%;
+	top:110%;
 	right:0%;
 }
-.introX{
-	position:absolute;
-	top:90%;
-	right:0%;
-	width:5em;
-	height:4em;
 
-}
-.introbackarrow2, .introbackarrow3, .introbackarrow4{
+.introbackarrow2, .introbackarrow3, .introbackarrow4,.introbackarrow5,.introbackarrow6,.introbackarrow7,.introbackarrow8{
 position:absolute;
-	top:93%;
+	top:110%;
 	left:0%;
 }
 #CorrCanvas, #RepCanvas{
@@ -153,7 +148,6 @@ position:absolute;
 	position:absolute;
 	bottom:5%;
 	height:27%;
-	width:10%;
 }
 .crosbyspeech{
 	position:absolute;
@@ -181,4 +175,10 @@ p.crosbyspeech  	{
 }
 .correlation{
  z-index:35;
+}
+#chartButton{
+	z-index: 45;
+	position: absolute;
+	top:75%;
+	left:72%;
 }

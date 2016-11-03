@@ -1,8 +1,5 @@
 var introPuckHome =false;
-/* date on menu click*/
-function displayDate() {
-	document.getElementById("menuClick").innerHTML = Date();
-}
+//function that changes one image to another
 function changeImage(obj,img) {
 	obj.src = img;
 }
@@ -17,6 +14,10 @@ function returnToHome(){
 	$("#introtext2").hide();
 	$("#introtext3").hide();
 	$("#introtext4").hide();
+	$("#introtext5").hide();
+	$("#introtext6").hide();
+	$("#introtext7").hide();
+	$("#introtext8").hide();
 	$(".crosby").hide();
 	$(".crosbyspeech").hide();
 	$(".introbg").hide();
@@ -27,6 +28,8 @@ function returnToHome(){
 	canvasReset();
 	introON=false;
 }
+
+//returns to home from link, shrinks puck and returns background to normal
 function returnToHomeFromLink(){
 	returnToHome();	
 
@@ -66,6 +69,11 @@ $("#introtext1").hide();
 $("#introtext2").hide();
 $("#introtext3").hide();
 $("#introtext4").hide();
+$("#introtext5").hide();
+$("#introtext6").hide();
+$("#introtext7").hide();
+$("#introtext8").hide();
+
 $(".introbg").hide();
 
 $(".puck").click(function(){
@@ -73,7 +81,7 @@ $(".puck").click(function(){
 		$(".puck").animate({
 			height: '+=450px',
 			width: '+=450px',
-			top:"+=-23%",
+			top:"-=30%",
 			left:"-=28%"
 		});
 		introPuckHome=false;
@@ -92,7 +100,7 @@ $(".puck").click(function(){
 			top:"-=40%",
 			left:"-=3%"
 
-			
+
 
 		});
 		$("body").css({
@@ -111,7 +119,7 @@ $(".puck").click(function(){
 		
 		returnToHomeFromLink();
 
-		
+
 		leftlinkON=false;
 	}
 	/* returns puck to normal */
@@ -153,12 +161,12 @@ $(".puck").click(function(){
 		$("body").css({
 			'background-size': '150%',
 			'background-position': 'center'
-			
+
 
 		});
 		hideHome();		
-		
-		
+
+
 		$("#introtext1").show();
 
 		introON=true;
@@ -170,6 +178,7 @@ $("#CorrCanvas").hide();
 $("#CorrGraph1").hide();
 $("#CorrGraph2").hide();
 $("#CorrGraph3").hide();
+$("#chartButton").hide();
 function hideCorr(){
 	$("#CorrCanvas").hide();
 	$("#defCorrelation").css({
@@ -178,6 +187,8 @@ function hideCorr(){
 	$("#CorrGraph1").hide();
 	$("#CorrGraph2").hide();
 	$("#CorrGraph3").hide();
+	$("#chartButton").hide();
+
 	
 }
 var CorrGraph =1;
@@ -197,6 +208,8 @@ $("#defCorrelation").click(function(){
 		$("#CorrCanvas").show();
 		$("#CorrGraph1").show();
 		$("#canvas").show();
+			$("#chartButton").show();
+
 		CorrGraph =1;
 
 		
@@ -225,7 +238,7 @@ $(".correlation").click(function(){
 		$("#CorrCanvas").hide();
 		$("#CorrGraph3").hide();
 		$("#canvas").hide();
-
+		hideCorr();
 		corrUpdate(3);
 
 		defCorrel = false;
@@ -245,6 +258,8 @@ $("#defRepeat").click(function(){
 		$("#RepGraph1").hide();
 		$("#RepGraph2").hide();
 		$("#RepGraph3").hide();
+					$("#chartButton").hide();
+
 		repGraph=1;
 		repUpdate(6);
 		defRep= false;
@@ -254,6 +269,7 @@ $("#defRepeat").click(function(){
 		$("#RepCanvas").show();
 		$("#repGraph").show();
 		$("#RepGraph1").show();
+			$("#chartButton").show();
 
 		defRep=true;
 	}
@@ -270,8 +286,6 @@ $(".repeatability").click(function(){
 
 	}
 	else if (repGraph==2){
-		$("#RepGraph2").hide();
-		$("#RepGraph3").show();
 		repUpdate(2);
 		repGraph=3;
 	}
@@ -280,9 +294,11 @@ $(".repeatability").click(function(){
 		
 
 		repUpdate(3);
-
+ 
 	}
 	else if (repGraph==4){
+		$("#RepGraph2").hide();
+		$("#RepGraph3").show();
 		repUpdate(4);
 		repGraph=5;
 
@@ -300,6 +316,8 @@ $(".repeatability").click(function(){
 		$("#RepGraph3").hide();
 		$(".repeatability").hide();
 		repGraph=1;
+							$("#chartButton").hide();
+
 		defRep = false;
 
 	}
@@ -341,24 +359,95 @@ $(".introbackarrow3").click(function(){
 
 
 });
+
+
 $(".introarrow3").click(function(){
 	$("#introtext3").hide();
 	$("#introtext4").show();
+	introtext3Start();
+	animate2.stop();
+
+	canvasReset();
+
+});
+$(".introbackarrow4").click(function(){
+	$("#introtext3").show();
+	$("#introtext4").hide();
+	animate3.stop();
+	introtext2Start();
+
+
+});
+$(".introarrow4").click(function(){
+	$("#introtext4").hide();
+	$("#introtext5").show();
+	introtext3Start();
+	animate2.stop();
+
+	canvasReset();
+
+});
+$(".introbackarrow5").click(function(){
+	$("#introtext4").show();
+	$("#introtext5").hide();
+	animate3.stop();
+	introtext2Start();
+
+
+});
+
+$(".introarrow5").click(function(){
+	$("#introtext5").hide();
+	$("#introtext6").show();
+	introtext3Start();
+	animate2.stop();
+
+	canvasReset();
+
+});
+$(".introbackarrow6").click(function(){
+	$("#introtext5").show();
+	$("#introtext6").hide();
+	animate3.stop();
+	introtext2Start();
+
+
+});
+$(".introarrow6").click(function(){
+	$("#introtext6").hide();
+	$("#introtext7").show();
+	introtext3Start();
+	animate2.stop();
+
+	canvasReset();
+
+});
+$(".introbackarrow7").click(function(){
+	$("#introtext6").show();
+	$("#introtext7").hide();
+	animate3.stop();
+	introtext2Start();
+
+
+});
+$(".introarrow7").click(function(){
+	$("#introtext7").hide();
+	$("#introtext8").show();
 	introtext4Start();
 	animate3.stop();
 
 	$(".puck").animate({
 		height: '-=350px',
 		width: '-=350px',
-		top:"-=16%",
+		top:"-=10%",
 		left:"+=25%",
 		zIndex:"2"
 	});
 	introPuckHome =true;
 });
-$(".introbackarrow4").click(function(){
-	$("#introtext3").show();
-	$("#introtext4").hide();
+$(".introbackarrow8").click(function(){
+	$("#introtext7").show();
+	$("#introtext8").hide();
 	animate4.stop();
 	introtext3Start();
 	$(".puck").animate({
@@ -369,10 +458,16 @@ $(".introbackarrow4").click(function(){
 	});
 	introPuckHome =false;
 
-	
+
 
 });
-
+// does action on space bar press
+// $(window).keypress(function (e) {
+//   if (e.keyCode === 0 || e.keyCode === 32) {
+//     e.preventDefault()
+//     console.log('Space pressed')
+//   }
+// })
 /* actives toplink */
 var toplinkON = false;
 $(".crosby").hide();
@@ -381,7 +476,11 @@ $(".crosbyspeech").hide();
 
 $("#toplink").click(function(){
 
-	if(toplinkON){
+	if (introON){
+		$(".crosby").show();
+		hideHome();
+				toplinkON=true;
+				introOn=false;
 
 	}
 	else{
@@ -421,7 +520,7 @@ $(".crosbyspeech").click(function(){
 
 
 	}
-	
+
 	else{			
 		$(crosbySlide).hide();
 		crosbySlideNum+=1;
@@ -431,7 +530,7 @@ $(".crosbyspeech").click(function(){
 
 
 	} 
-	
+
 
 });
 
@@ -454,13 +553,13 @@ $("#leftlink").click(function(){
 			'background-position': '0% 50%'
 
 
-			
+
 
 		});
 		hideHome();			
 
 		$("#lefttext1").show();
-		
+
 		leftlinkON=true;
 	}
 });  
@@ -483,13 +582,13 @@ $("#rightlink").click(function(){
 			'background-position': '100% 50%'
 
 
-			
+
 
 		});
 		hideHome();			
 
 		$("#lefttext1").show();
-		
+
 		rightlinkON=true;
 	}
 });  
@@ -513,14 +612,14 @@ $("#bottomlink").click(function(){
 		$("body").css({
 			'background-size': '200%',
 			'background-position': '50% 100%'
-			
+
 
 		});
 
 		hideHome();			
 		$("#lefttext1").show();
 
-		
+
 		bottomlinkON=true;
 	}
 });  

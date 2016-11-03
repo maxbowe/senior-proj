@@ -26,7 +26,7 @@ var corrData = {
                 duration: 50000
             },
             datasets: [{
-                label: "My First dataset",
+                label: "Team Red",
                 backgroundColor: 'red',
                 data: [{
                     x: 75,
@@ -34,7 +34,7 @@ var corrData = {
                     r: 25
                 }]
             }, {
-                label: "My Second dataset",
+                label: "Team Blue",
                 backgroundColor: 'blue',
                 data: [{
                     x: 25,
@@ -56,18 +56,39 @@ var corrData = {
                     beginAtZero:true,
 					max: 100,
                     min: 0,
-                    stepSize: 25
-                }
+                    stepSize: 25,
+                     
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'Winning chance',
+                            fontSize:20
+                        }
             }],
 			 xAxes: [{
                 ticks: {
                     max: 100,
                     min: 0,
-                    stepSize: 25
-                }
+                    stepSize: 25,
+                    
+                },
+                scaleLabel: {
+                            display: true,
+                            labelString: 'Corsi For %',
+                            fontSize:20
+                        }
             }]
-        }
+        },
+        title:{
+            display:true,
+            text:"Winning Chances X Corsi For %",
+            fontSize:28,
+            fontFamily:"Calibri"  
+            }
+    },
+    label:{
+                                    fontSize:20
+
     }
 			
 		 });
-       

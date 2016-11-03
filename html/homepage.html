@@ -25,7 +25,7 @@
 	</div>
 	<div class ="row">
 		<p id="toplink">
-			<a id= "subsection">Possession and Metric Rate Stats</a>
+			<a id= "subsection">Shot Metrics and Rate Stats</a>
 			
 			<br>
 			<br>
@@ -43,13 +43,14 @@
 
 		<img class="introbg" src="../images/speech-box.png"></img>
 		<div id="introtext1"><p id=headline>Why do people care about hockey analytics?</p>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The purpose of analytics is to figure out why an outcome happens, how to reproduce that outcome and what the best way is to assure that outcome happens again. Finding <a class="define" id="defCorrelation">correlations</a> between events is extremely important. For example, there is a very high correlation between scoring more goals than your opponent and winning. Even if that seems obvious, its an important relationship to make, because you can then start to look at bigger questions, like “what allows my team to score more goals than the other?”  and “how do I make sure the other team doesn’t score many goals?”. Even questions like “When is the best time to pull my goalie (goalie getting yanked offstage with cane)?” can be answered with analytics.
-			<a><img class="introarrow1" src="../images/arrow.png"></img></a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The purpose of analytics is to figure out what events cause an outcome to happen what the best way is to make that outcome happens again. Finding <a class="define" id="defCorrelation">correlations</a> between these events is extremely important. 
+ <a><img class="introarrow1" src="../images/arrow.png"></img></a>
 		</div> 
 		<a class="correlation">
 		<img src="../images/defBox.png" id="CorrCanvas"></img>
-<!-- 					<a class="corrX1"></a><a class="corrY1"></a>
--->					<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
+				<img src="../images/blinking-arrow.gif" id="chartButton"></img>
+
+				<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
 <p id="CorrGraph2">Not only does <span style="color:red;">The Red Team</span> move close to the 50% for winning chances, <span style="color:blue;">the Blue Team</span> does as well. There is a very close relationship between these two stats. Because the stats are from two opposing teams, they will always being moving with each other. This is as extreme as the two stats can go. </p>
 <p id="CorrGraph3">You can see that the two teams,<span style="color:red;"> Red </span>and <span style="color:blue;"> blue</span>, have an extremely high correlation. The must add up to 100%, so when one goes up, the other must come down.  </p>
 <div class ="row">
@@ -57,16 +58,21 @@
 </div>		 <div class ="medium-2 columns">
 </div></div>
 </a>
-	<div id="introtext2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses. However a metric like shot attempts (better known as CORSI, but we will be getting more into that in <a id="toplink">Possession Metrics and Rate Stats</a>) is much more repeatable because it relies on less separate factors, although those factors still do exist).
+	<div id="introtext2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For example, there is a high correlation between scoring more goals than your opponent and winning. Even if that seems obvious, its an important relationship to make, because you can then start to look at bigger questions, like “what allows my team to score goals?”  and “how can I stop the other team from scoring goals?”. 
 	<a><img class="introbackarrow2" src="../images/backarrow.png"></img></a>
 	<a><img class="introarrow2" src="../images/arrow.png"></img></a>
 </div>
-<a class="repeatability">
+
+	<div id="introtext3">The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals themelves are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses.
+		<a><img class="introbackarrow3" src="../images/backarrow.png"></img></a>
+		<a><img class="introarrow3" src="../images/arrow.png"></img></a>
+	</div>
+	<a class="repeatability">
 	<img src="../images/defBox.png" id="RepCanvas"></img>
 		<p id="RepGraph1">Repeatability is a measure of the effectiveness of a statistic. For a statistic (or a study) to be considered good, it should be able to be replicated with extremely similar results. For example, the sun setting in the west is a repeatable event, its all but guaranteed to happen every day. Thus, it’d have a repeatability of 1 (the highest it can be, from a 0-1 scale).</p>
 		<p id="RepGraph2">
 			In the example above, we are measuring a coin flipping 2,000 times and seeing how many times it lands on heads, and how many times it lands on tails. Because the ratio of<span style="color:#E8C07F;"> heads</span> to <span style="color:#58DAFF;">tails</span> will vary, this won’t have a repeatability of 1, but 95% of the time it will end up between 900-1100 heads, which gives it a repeatability of .9.</p>
-		<p id="RepGraph3">You can end up with extreme outliers, like 500 <span style="color:#E8C07F;"> heads</span> and 1500 <span style="color:#58DAFF;">tails</span>, but the chances of that are around .2%, or 1 in 500 attempts. </p>
+		<p id="RepGraph3">You can end up with extreme outliers, like 750 <span style="color:#E8C07F;"> heads</span> and 1250 <span style="color:#58DAFF;">tails</span>, are less than 1 in 5,000. So the point of measuring repeatability isn't about if an event can happen, but how likely it is to happen.</p>
 
 						<div class ="row">
 		<div class ="medium-2 columns">	</div>	 <div class ="medium-8 columns">
@@ -75,14 +81,29 @@
 	</div></div>
 
 </a>
-	<div id="introtext3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since SaberMetrics blew up Baseball, sports analytics are a rapidly growing field, especially in the public sphere. Though teams have always had some sort of internal analytics teams, the public hasn’t had access to it the way we do now. More people having more access has led to some tremendous innovations in sports analytics, which have begun to trickle its way into professional sports leagues. There is still plenty of work to go into hockey analytics, some of which we do not have the technology or manpower to track yet, but the more we learn the more we and understand the game.
-		<a><img class="introbackarrow3" src="../images/backarrow.png"></img></a>
-		<a><img class="introarrow3" src="../images/arrow.png"></img></a>
-	</div>
-	<div id="introtext4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This involves bucking classic notions, like the important of a player’s size, fights energize a team, and +/- is the best metric to understand how a player performs. This creates a rift between modern analytic workers, and classic old style people. It transforms a game of energy and excitement to a game of numbers and probabilities, which can understandably suck the fun out for some people. Turning a classic sport into a random number generator isn’t everyone’s cup of tea, which is why analytics aren’t going to be for everyone. Even players and coaches shouldn’t care about every analytic, and many statistics end up being most important to managers for player evaluation. There will always be complications of numbers due to player use, coach strategies and who they are playing with, but with enough work analytics can erase those concerns.
+	<div id="introtext4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However a metric like shot attempts (better known as CORSI, but we will be getting more into that in <a id="toplink">Shot Metrics and Rate Stats</a>) is much more repeatable because it relies on less separate factors, although those factors still do exist).
 		<a><img class="introbackarrow4" src="../images/backarrow.png"></img></a>
-		<!-- <a><img class="introX" src="../images/x.png"></img></a> -->
+	<a><img class="introarrow4" src="../images/arrow.png"></img></a>
 	</div>
+</div>
+	<div id="introtext5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sports analytics have been a rapidly growing field for decades, especially now in the public sphere. More people having more access to open data has led to some tremendous innovations in sports analytics, some of which have begun to trickle its way into professional sports leagues.  
+	<a><img class="introbackarrow5" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow5" src="../images/arrow.png"></img></a>
+</div>
+
+	<div id="introtext6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This involves bucking classic notions, like the importance of a player’s size, that fights revitalize a team, and +/- is the best metric to understand how a player performs. This creates a rift between modern analytic workers and classic hockey heads. 
+	<a><img class="introbackarrow6" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow6" src="../images/arrow.png"></img></a>
+</div>
+
+	<div id="introtext7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It transforms a game of energy and excitement to a game of numbers and probabilities, which can understandably suck the fun out for some people. Analytics don’t have to be fun, but they are an important managerial (or armchair GM) tool. 
+	<a><img class="introbackarrow7" src="../images/backarrow.png"></img></a>
+		<a><img class="introarrow7" src="../images/arrow.png"></img></a>
+
+</div>
+	<div id="introtext8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There will always be complications of numbers due to player use, coach strategies and who they are playing with, but with enough work analytics can erase those concerns. But if you’d like to understand player evaluation without watching games better, continue on this journey with me.
+	<a><img class="introbackarrow8" src="../images/backarrow.png"></img></a>
+
 </div>
 <div class="row fullWidth">	
 	<div class ="medium-4 columns">
