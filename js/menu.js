@@ -330,20 +330,194 @@ var introPart;
 $("#introbackarrow").hide();
 
 $(".introarrow").click(function(){
+	if (introPart==7){
+		introPart++;
+		$(".introarrow").hide();
+
+		$(".puck").animate({
+		height: '-=350px',
+		width: '-=350px',
+		top:"-=10%",
+		left:"+=25%",
+		zIndex:"2"
+	});
+ 	introPuckHome =true;
+	}
+	else{
 		$("#introtext"+introPart).hide();
 		introPart++;
 		$("#introtext"+introPart).show();
 
 
+
+	}
  });
 $(".introbackarrow").click(function(){
+	if (introPart==8){
+				introPart--;
+
+	$(".introarrow").show();
+		$(".puck").animate({
+		height: '+=350px',
+		width: '+=350px',
+		top:"+=10%",
+		left:"-=25%",
+		zIndex:"2"
+	});
+	}
+	else{
 	$("#introtext"+introPart).hide();
 		introPart--;
 		$("#introtext"+introPart).show();
-
-
+		
+	}
  });
 
+// $(".introarrow1").click(function(){
+// 	$("#introtext1").hide();
+// 	$("#introtext2").show();
+// 	$("#CorrCanvas").hide();
+// 	introtext2Start();
+// 	animate1.stop();
+// 	canvasReset();
+
+// });
+// $(".introbackarrow2").click(function(){
+// 	$("#introtext1").show();
+// 	$("#introtext2").hide();
+// 	introtext1Start();
+// 	animate2.stop();
+// 	canvasReset();
+
+
+
+// });
+// $(".introarrow2").click(function(){
+// 	$("#introtext2").hide();
+// 	$("#introtext3").show();
+// 	introtext3Start();
+// 	animate2.stop();
+
+// 	canvasReset();
+
+// });
+// $(".introbackarrow3").click(function(){
+// 	$("#introtext2").show();
+// 	$("#introtext3").hide();
+// 	animate3.stop();
+// 	introtext2Start();
+
+
+// });
+
+
+// $(".introarrow3").click(function(){
+// 	$("#introtext3").hide();
+// 	$("#introtext4").show();
+// 	introtext4Start();
+// 	animate3.stop();
+
+// 	canvasReset();
+
+// });
+// $(".introbackarrow4").click(function(){
+// 	$("#introtext3").show();
+// 	$("#introtext4").hide();
+// 	animate4.stop();
+// 	introtext3Start();
+
+
+// });
+// $(".introarrow4").click(function(){
+// 	$("#introtext4").hide();
+// 	$("#introtext5").show();
+// 	introtext5Start();
+// 	animate4.stop();
+
+// 	canvasReset();
+
+// });
+// $(".introbackarrow5").click(function(){
+// 	$("#introtext4").show();
+// 	$("#introtext5").hide();
+// 	animate5.stop();
+// 	introtext4Start();
+
+
+// });
+
+// $(".introarrow5").click(function(){
+// 	$("#introtext5").hide();
+// 	$("#introtext6").show();
+// 	introtext6Start();
+// 	animate5.stop();
+
+// 	canvasReset();
+
+// });
+// $(".introbackarrow6").click(function(){
+// 	$("#introtext5").show();
+// 	$("#introtext6").hide();
+// 	animate6.stop();
+// 	introtext5Start();
+
+
+// });
+// $(".introarrow6").click(function(){
+// 	$("#introtext6").hide();
+// 	$("#introtext7").show();
+// 	introtext7Start();
+// 	animate6.stop();
+
+// 	canvasReset();
+
+// });
+// $(".introbackarrow7").click(function(){
+// 	$("#introtext6").show();
+// 	$("#introtext7").hide();
+// 	animate7.stop();
+// 	introtext6Start();
+
+
+// });
+// $(".introarrow7").click(function(){
+// 	$("#introtext7").hide();
+// 	$("#introtext8").show();
+// 	introtext8Start();
+// 	animate7.stop();
+
+// 	$(".puck").animate({
+// 		height: '-=350px',
+// 		width: '-=350px',
+// 		top:"-=10%",
+// 		left:"+=25%",
+// 		zIndex:"2"
+// 	});
+// 	introPuckHome =true;
+// });
+// $(".introbackarrow8").click(function(){
+// 	$("#introtext7").show();
+// 	$("#introtext8").hide();
+// 	animate8.stop();
+// 	introtext7Start();
+// 	$(".puck").animate({
+// 		height: '+=350px',
+// 		width: '+=350px',
+// 		top:"+=17%",
+// 		left:"-=25%"
+// 	});
+// 	introPuckHome =false;
+
+
+
+// });
+// does action on space bar press
+// $(window).keypress(function (e) {
+//   if (e.keyCode === 0 || e.keyCode === 32) {
+//     e.preventDefault()
+//     console.log('Space pressed')
+//   }
+// })
 /* actives toplink */
 var toplinkON = false;
 $(".crosby").hide();
