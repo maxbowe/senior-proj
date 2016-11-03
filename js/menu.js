@@ -364,8 +364,8 @@ $(".introbackarrow3").click(function(){
 $(".introarrow3").click(function(){
 	$("#introtext3").hide();
 	$("#introtext4").show();
-	introtext3Start();
-	animate2.stop();
+	introtext4Start();
+	animate3.stop();
 
 	canvasReset();
 
@@ -373,16 +373,16 @@ $(".introarrow3").click(function(){
 $(".introbackarrow4").click(function(){
 	$("#introtext3").show();
 	$("#introtext4").hide();
-	animate3.stop();
-	introtext2Start();
+	animate4.stop();
+	introtext3Start();
 
 
 });
 $(".introarrow4").click(function(){
 	$("#introtext4").hide();
 	$("#introtext5").show();
-	introtext3Start();
-	animate2.stop();
+	introtext5Start();
+	animate4.stop();
 
 	canvasReset();
 
@@ -390,8 +390,8 @@ $(".introarrow4").click(function(){
 $(".introbackarrow5").click(function(){
 	$("#introtext4").show();
 	$("#introtext5").hide();
-	animate3.stop();
-	introtext2Start();
+	animate5.stop();
+	introtext4Start();
 
 
 });
@@ -399,8 +399,8 @@ $(".introbackarrow5").click(function(){
 $(".introarrow5").click(function(){
 	$("#introtext5").hide();
 	$("#introtext6").show();
-	introtext3Start();
-	animate2.stop();
+	introtext6Start();
+	animate5.stop();
 
 	canvasReset();
 
@@ -408,16 +408,16 @@ $(".introarrow5").click(function(){
 $(".introbackarrow6").click(function(){
 	$("#introtext5").show();
 	$("#introtext6").hide();
-	animate3.stop();
-	introtext2Start();
+	animate6.stop();
+	introtext5Start();
 
 
 });
 $(".introarrow6").click(function(){
 	$("#introtext6").hide();
 	$("#introtext7").show();
-	introtext3Start();
-	animate2.stop();
+	introtext7Start();
+	animate6.stop();
 
 	canvasReset();
 
@@ -425,16 +425,16 @@ $(".introarrow6").click(function(){
 $(".introbackarrow7").click(function(){
 	$("#introtext6").show();
 	$("#introtext7").hide();
-	animate3.stop();
-	introtext2Start();
+	animate7.stop();
+	introtext6Start();
 
 
 });
 $(".introarrow7").click(function(){
 	$("#introtext7").hide();
 	$("#introtext8").show();
-	introtext4Start();
-	animate3.stop();
+	introtext8Start();
+	animate7.stop();
 
 	$(".puck").animate({
 		height: '-=350px',
@@ -448,8 +448,8 @@ $(".introarrow7").click(function(){
 $(".introbackarrow8").click(function(){
 	$("#introtext7").show();
 	$("#introtext8").hide();
-	animate4.stop();
-	introtext3Start();
+	animate8.stop();
+	introtext7Start();
 	$(".puck").animate({
 		height: '+=350px',
 		width: '+=350px',
@@ -678,6 +678,74 @@ function introtext3Start(){ animate3.each(function(i) {
 }
 var animate4 = $("#introtext4").blast({ delimiter: "word" });
 function introtext4Start(){ animate4.each(function(i) {
+	  // initialize position
+	  $(this).css({
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 7)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}
+var animate5 = $("#introtext5").blast({ delimiter: "word" });
+function introtext5Start(){ animate5.each(function(i) {
+	  // initialize position
+	  $(this).css({
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 7)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}
+var animate6 = $("#introtext6").blast({ delimiter: "word" });
+function introtext6Start(){ animate6.each(function(i) {
+	  // initialize position
+	  $(this).css({
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 7)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}
+var animate7 = $("#introtext7").blast({ delimiter: "word" });
+function introtext7Start(){ animate7.each(function(i) {
+	  // initialize position
+	  $(this).css({
+	  	position: 'relative',
+	  	left: 0,
+	  	opacity:0
+	  })
+
+	  // Delay: we don't want to animate
+	  // characters simultaneously
+	  .delay(i * 7)
+
+	  // Animate to the right
+	  .animate({ opacity: 1}, 500);
+	});
+}
+var animate8 = $("#introtext8").blast({ delimiter: "word" });
+function introtext8Start(){ animate8.each(function(i) {
 	  // initialize position
 	  $(this).css({
 	  	position: 'relative',
