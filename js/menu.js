@@ -550,7 +550,10 @@ $("#toplink").click(function(){
 		$("#crosby2").hide();
 		$("#crosby3").hide();
 		$("#crosby4").hide();
+		$("#crosby5").hide();
+		$("#crosby6").hide();
 		toplinkON=true;
+
 
 	}
 });  
@@ -558,7 +561,7 @@ var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
 $(".crosbyspeech").click(function(){
 	console.log(crosbySlideNum);
 
-	if(crosbySlideNum == 4){
+	if(crosbySlideNum == 6){
 		crosbySlideNum = 1;
 		crosbySlide= "#crosby" + crosbySlideNum;
 

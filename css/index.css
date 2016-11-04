@@ -147,7 +147,7 @@ position:absolute;
 .crosby, .bergeron{
 	position:absolute;
 	bottom:5%;
-	height:27%;
+	height:35%;
 }
 .crosbyspeech, .bergyspeech{
 	position:absolute;
@@ -184,4 +184,11 @@ p.crosbyspeech, p.bergyspeech 	{
 	top:82%;
 	left:65%;
 	width:5%;
+}
+#speechButton{
+	z-index: 45;
+	position: absolute;
+	left:85%;
+	width:8%;
+	top:50%;
 }
