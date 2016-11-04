@@ -67,6 +67,9 @@ var repData = { labels: [
             labels: {
                 fontSize: 20
             }
+        },
+        label:{
+        scaleFontColor: "#ff0000"
         }
     }	
 		 });

@@ -165,13 +165,15 @@ p.crosbyspeech, p.bergyspeech 	{
 
 
 #canvas, #repGraph{
-	background-color:white;
+	background-color:rgba(2,3,2,0);
 	/* width:900px !important;
 	height:400px !important; */
  	position:absolute;
 	top:28%;
 	left:29%;
 	z-index:25;
+	color:white;
+
 }
 .correlation{
  z-index:35;
@@ -179,7 +181,7 @@ p.crosbyspeech, p.bergyspeech 	{
 #chartButton{
 	z-index: 45;
 	position: absolute;
-	top:75%;
-	left:68%;
+	top:82%;
+	left:65%;
 	width:5%;
 }
