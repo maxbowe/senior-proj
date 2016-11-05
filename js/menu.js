@@ -109,7 +109,7 @@ $(".puck").click(function(){
 			'background-size': '100%',
 			'background-position': 'center'
 		});
-		changeImage(this,"../images/puck.png");
+		changeImage(this,"../images/puck-sticker.png");
 		returnToHome();
 
 
