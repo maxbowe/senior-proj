@@ -199,9 +199,22 @@ p.crosbyspeech, p.bergyspeech 	{
 	width:8%;
 	top:50%;
 }
-.net{
+#net{
 	position: absolute;
-	top:5%;
-	left:30%;
+	top:-5%;
 
+}
+#check1{
+	position: absolute;
+	z-index:45;
+	width: 5%;
+	top:25%;
+	left:40%;
+}
+#miss1{
+	position: absolute;
+	z-index:45;
+	width: 5%;
+	top:25%;
+	left:80%;
 }

@@ -19,13 +19,13 @@ function returnToHome(){
 	$("#introtext7").hide();
 	$("#introtext8").hide();
 	$(".crosby").hide();
-	$(".net").hide();
 	$(".crosbyspeech").hide();
 	$(".bergeron").hide();
 	$(".bergyspeech").hide();
 	$(".introbg").hide();
 	hideCorr();
 	$("#canvas").hide();
+	$(".CORSI").hide();
 
 
 	canvasReset();
@@ -523,8 +523,7 @@ $(".introbackarrow").click(function(){
 var toplinkON = false;
 $(".crosby").hide();
 $(".crosbyspeech").hide();
-	$(".net").hide();
-
+$(".CORSI").hide();
 
 $("#toplink").click(function(){
 
@@ -549,8 +548,11 @@ $("#toplink").click(function(){
 		hideHome();			
 		$(".crosby").show();
 		$(".crosbyspeech").show();
-			$(".net").show();
+		$(".CORSI").show();
+		$("#net").hide();
+		$("#miss1").hide();
 
+		$("#check1").hide();
 		$("#crosby2").hide();
 		$("#crosby3").hide();
 		$("#crosby4").hide();
@@ -561,6 +563,7 @@ $("#toplink").click(function(){
 
 	}
 });  
+
 var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
 $(".crosbyspeech").click(function(){
 	console.log(crosbySlideNum);
@@ -575,7 +578,7 @@ $(".crosbyspeech").click(function(){
 
 
 	}
-
+	
 	else{			
 		$(crosbySlide).hide();
 		crosbySlideNum+=1;
@@ -585,6 +588,22 @@ $(".crosbyspeech").click(function(){
 
 
 	} 
+	if(crosbySlideNum==2){
+		$("#net").show();
+
+	}
+	if(crosbySlideNum==3){
+		$("#check1").show();
+		$("#miss1").show();
+
+
+	}
+	else if(crosbySlideNum==5){
+		$("#net").hide();	
+		$("#check1").hide();
+		$("#miss1").hide();
+
+	}
 
 
 });
