@@ -2,6 +2,12 @@
 			background-image: url("../images/rink-dark.png");
 			overflow:hidden;
 			color:black;
+			 -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 } 
 p {
     text-align: center;
@@ -40,6 +46,7 @@ z-index:500;
 	position:absolute;
 
 }
+
  .puck{
 	position:absolute;
 	top:25%;
