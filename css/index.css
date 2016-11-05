@@ -201,20 +201,25 @@ p.crosbyspeech, p.bergyspeech 	{
 }
 #net{
 	position: absolute;
-	top:-5%;
+	top:1%;
+
+}
+#goalie{
+	position: absolute;
+	top:1%;
 
 }
 #check1{
 	position: absolute;
 	z-index:45;
-	width: 5%;
+	width: 7%;
 	top:25%;
 	left:40%;
 }
 #miss1{
 	position: absolute;
 	z-index:45;
-	width: 5%;
+	width: 7%;
 	top:25%;
 	left:80%;
 }

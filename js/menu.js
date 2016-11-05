@@ -26,7 +26,7 @@ function returnToHome(){
 	hideCorr();
 	$("#canvas").hide();
 	$(".CORSI").hide();
-
+	$("#goalie").hide();
 
 	canvasReset();
 	introON=false;
@@ -551,6 +551,7 @@ $("#toplink").click(function(){
 		$(".CORSI").show();
 		$("#net").hide();
 		$("#miss1").hide();
+		$("#goalie").hide();
 
 		$("#check1").hide();
 		$("#crosby2").hide();
@@ -593,15 +594,25 @@ $(".crosbyspeech").click(function(){
 
 	}
 	if(crosbySlideNum==3){
+		$("#goalie").show();
+
+
+	}
+	if(crosbySlideNum==4){
 		$("#check1").show();
+
+
+	}
+	if(crosbySlideNum==5){
 		$("#miss1").show();
 
 
 	}
-	else if(crosbySlideNum==5){
+	else if(crosbySlideNum==7){
 		$("#net").hide();	
 		$("#check1").hide();
 		$("#miss1").hide();
+		$("#goalie").hide();
 
 	}
 
