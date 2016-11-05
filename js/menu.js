@@ -19,6 +19,7 @@ function returnToHome(){
 	$("#introtext7").hide();
 	$("#introtext8").hide();
 	$(".crosby").hide();
+	$(".net").hide();
 	$(".crosbyspeech").hide();
 	$(".bergeron").hide();
 	$(".bergyspeech").hide();
@@ -522,6 +523,7 @@ $(".introbackarrow").click(function(){
 var toplinkON = false;
 $(".crosby").hide();
 $(".crosbyspeech").hide();
+	$(".net").hide();
 
 
 $("#toplink").click(function(){
@@ -547,6 +549,8 @@ $("#toplink").click(function(){
 		hideHome();			
 		$(".crosby").show();
 		$(".crosbyspeech").show();
+			$(".net").show();
+
 		$("#crosby2").hide();
 		$("#crosby3").hide();
 		$("#crosby4").hide();
