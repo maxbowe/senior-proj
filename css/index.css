@@ -1,5 +1,7 @@
  body {
 			background-image: url("../images/rink-dark.png");
+			background-size: cover;
+			height: 100%;
 			overflow:hidden;
 			color:black;
 			 -webkit-tlout: none; /* iOS Safari */
@@ -61,7 +63,8 @@ z-index:500;
 	z-index:1;
 	width: 500px;
 	height: 500px;
-	  background-size: auto;
+	   background-size: cover;
+
 
 	  background-repeat: no-repeat;
 
@@ -69,10 +72,7 @@ z-index:500;
 .puck:hover{
   background-image: url("../images/puck-sticker.png");
   background-repeat: no-repeat;
-width: 500px;
-	height: 500px;
-	min-height: auto;
-	min-width: auto;
+  background-size: cover;
 }
 #rightlink{
 	top:50%;
@@ -111,7 +111,7 @@ color: rgb(224, 136, 136);
 font-family:"Calibre";
 /* font-weight:bold;	
  */font-size:1.75em;
-top:1%;
+top:3%;
 position:absolute;
 left:25%;
 right:30%;
@@ -157,7 +157,7 @@ position:absolute;
 #CorrGraph1,#CorrGraph2,  #CorrGraph3, #RepGraph1, #RepGraph2, #RepGraph3{
 	font-family:"Calibre";
 	position:absolute;
-	top:68%;
+	top:70%;
 	left:29%;
 	z-index:30;
 	font-size:1.5em;

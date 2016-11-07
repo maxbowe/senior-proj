@@ -27,6 +27,7 @@ function returnToHome(){
 	$("#canvas").hide();
 	$(".CORSI").hide();
 	$("#goalie").hide();
+	$(".introarrow").show();
 
 	canvasReset();
 	introON=false;
@@ -120,7 +121,6 @@ $(".puck").click(function(){
 			'background-size': '100%',
 			'background-position': 'center'
 		});
-		changeImage(this,"../images/puck.png");
 		returnToHome();
 	}
 	else if(introON){
@@ -137,7 +137,6 @@ $(".puck").click(function(){
 			'background-size': '100%',
 			'background-position': 'center'
 		});
-		changeImage(this,"../images/puck-sticker.png");
 		returnToHome();
 
 
