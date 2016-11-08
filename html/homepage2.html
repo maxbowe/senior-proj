@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
-   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hockey analytics</title>
-    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Hockey analytics</title>
+	<link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel='shortcut icon' href='../images/puck.png' type='image/x-icon'/ >
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -14,9 +14,9 @@
 	
 
 
-  </head>
-  
-  <body>
+</head>
+
+<body>
 
 	<div id = "menubutton">
 		<a onclick="displayDate()"><img src="../images/menu.png" alt="Menu"/></a>
@@ -25,98 +25,179 @@
 	</div>
 	<div class ="row">
 		<p id="toplink">
-			<a id= "subsection">Possession and Metric Rate Stats</a>
+			<a id= "subsection">Shot Metrics and Rate Stats</a>
 			
 			<br>
 			<br>
 			<br>
 		</p>
 
-					<img class="crosby" src="../images/crosby.png"></img>
-					<a><img class="crosbyspeech" src="../images/speech-bubble-crosby.png"/>
-					<a class="ballBounce"></a>
-					<p class="crosbyspeech" id="crosby1">Speech bubbles make what I say a precious gift and nothing else. For here and for elsewhere. Thank god! If I had to explain too much I might...</p>
-					<p class="crosbyspeech" id="crosby2">Words will eventually fill up much more space here </p>
-					<p class="crosbyspeech" id="crosby3">AND WORDS WILL BE HERE</p>
-					<p class="crosbyspeech" id="crosby4">tHIS IS ANOTHER ONE TOOOOOO, click to go back home</p>
-					</a>
+		<img class="crosby" src="../images/crosby-sticker.png"></img>
+			<div class ="row fullWidth">	<div class ="medium-2 columns">	&nbsp; </div>	 <div class ="medium-8 columns">		
+			<img class="CORSI" id="net" src="../images/goal.png"></img>
+			<img class="CORSI" id="goalie" src="../images/goalie.png"></img>
+			<img class="CORSI" id="check1" src="../images/hit.png"><img class="CORSI" id="puck1" src="../images/puck-side.png"><img class="CORSI" id="miss1" src="../images/miss.png"><img class="CORSI" id="puck2" src="../images/puck-side.png"></img>
+		</div>
+			<div class ="medium-2 columns">	&nbsp; </div></div>
+				
+				<div class ="row fullWidth">		<div class ="medium-2 columns">	&nbsp; </div>	 <div class ="medium-8 columns">	
 
-		<img class="introbg" src="../images/speech-box.png"></img>
+			<a><img class="crosbyspeech" src="../images/speech-bubble-crosby-sticker.png"/>
+
+			<a class="ballBounce"></a>
+			<p class="crosbyspeech" id="crosby1"><img src="../images/blinking-arrow_sticker.gif" id="speechButton"></img>
+				At the core of the new analytics movement is a stat called CORSI.</p>
+			<p class="crosbyspeech" id="crosby2"><img src="../images/blinking-arrow_sticker.gif" id="speechButton"></img>
+				CORSI is a new way to track shots. In the past we’ve just been looking at shots on goal, CORSI is tracking shot attempts. </p>
+			<p class="crosbyspeech" id="crosby3"><img src="../images/blinking-arrow_sticker.gif" id="speechButton"></img>
+				CORSI correlates with winning more than any other stat. 75% of teams in the top 10 CORSI for the past 10 years have made the playoffs. 
+			</p>
+			<p class="crosbyspeech" id="crosby4"><img src="../images/blinking-arrow_sticker.gif" id="speechButton"></img>
+				This stat produces better results than Goal For %, Shot attempts, hits or near any other stat.
+			</p>
+			<p class="crosbyspeech" id="crosby5"><img src="../images/blinking-arrow_sticker.gif" id="speechButton"></img>
+				You may be wondering, why not just take a ton of shots on net as much as possible. Thats not as easy as it sounds with today’s highly structured defensive systems.
+			</p>
+			<p class="crosbyspeech" id="crosby6"><img src="../images/blinking-arrow_sticker.gif" id="speechButton"></img>
+				Important to note is (Sample size). Player’s performance varies greatly game to game, but over the course of a season you will see the repeatability of CORSI come into play.
+			</p>
+		</a>
+		</div>
+			<div class ="medium-2 columns">	&nbsp; </div></div>
+</div>
+				<div class ="row fullWidth">		<div class ="medium-2 columns">	&nbsp; </div>	 <div class ="medium-8 columns">		
+
+		<img class="introbg" src="../images/speech-box-sticker.png"></img>
 		<div id="introtext1"><p id=headline>Why do people care about hockey analytics?</p>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The purpose of analytics is to figure out why an outcome happens, how to reproduce that outcome and what the best way is to assure that outcome happens again. Finding <a class="define" id="defCorrelation">correlations</a> between events is extremely important. For example, there is a very high correlation between scoring more goals than your opponent and winning. Even if that seems obvious, its an important relationship to make, because you can then start to look at bigger questions, like “what allows my team to score more goals than the other?”  and “how do I make sure the other team doesn’t score many goals?”. Even questions like “When is the best time to pull my goalie (goalie getting yanked offstage with cane)?” can be answered with analytics.
-		<a><img class="introarrow1" src="../images/arrow.png"></img></a>
-		</div>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The purpose of analytics is to figure out what events cause an outcome to happen what the best way is to make that outcome happens again. Finding <a class="define" id="defCorrelation">correlations</a> between these events is extremely important. 
+ <a><img class="introarrow" src="../images/arrow.png"></img></a>
+		</div> 
+
 		<a class="correlation">
-		<img src="../images/defBox.png" id="CorrCanvas"></img>
-					<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
-					<p id="CorrGraph2">Not only does <span style="color:red;">The Red Team</span> move close to the 50% for winning chances, <span style="color:blue;">the Blue Team</span> does as well. There is a very close relationship between these two stats. Because the stats are from two opposing teams, they will always being moving with each other. This is as extreme as the two stats can go. </p>
-					<p id="CorrGraph3">You can see that the two teams,<span style="color:red;"> Red </span>and <span style="color:blue;"> blue</span>, have an extremely high correlation. The must add up to 100%, so when one goes up, the other must come down.  </p>
-							 <div class ="row">
-	 <div class ="medium-2 columns">	</div>	 <div class ="medium-8 columns"> 
+		<img src="../images/defBox-sticker.png" id="CorrCanvas"></img>
+				<img src="../images/blinking-stick.gif" id="chartButton"></img>
 
-	<canvas id="canvas" style="display: block; width: 1100px; height: 500px;"></canvas></div>		 <div class ="medium-2 columns">
-</div></div></a>
+				<p id="CorrGraph1">Correlation is the relationship between two concepts. In this case, its a team's CORSI% (don't worry about what CORSI is right now) and their chances of winning. As you can see, the <span style="color:red;">Red team</span> has a much higher CORSI for%, thus a higher winning %. Watch what happens if we lower their CORSI for% to just over 50%.</p>
+<p id="CorrGraph2">Not only does <span style="color:red;">The Red Team</span> move close to the 50% for winning chances, <span style="color:blue;">the Blue Team</span> does as well. There is a very close relationship between these two stats. Because the stats are from two opposing teams, they will always being moving with each other. This is as extreme as the two stats can go. </p>
+<p id="CorrGraph3">You can see that the two teams,<span style="color:red;"> Red </span>and <span style="color:blue;"> blue</span>, have an extremely high correlation. The must add up to 100%, so when one goes up, the other must come down.  </p>
+<div class ="row">
+	<div class ="medium-2 columns">	</div>	 <div class ="medium-8 columns">	<canvas id="canvas" style="display: block; width: 1100px; height: 500px;"></canvas>
+</div>		 <div class ="medium-2 columns">
+</div></div>
+</a>
+	<div id="introtext2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For example, there is a high correlation between scoring more goals than your opponent and winning. Even if that seems obvious, its an important relationship to make, because you can then start to look at bigger questions, like “what allows my team to score goals?”  and “how can I stop the other team from scoring goals?”. 
+	<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow" src="../images/arrow.png"></img></a>
+</div>
 
-		<p id="introtext2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses. However a metric like shot attempts (better known as CORSI, but we will be getting more into that in <a id="toplink">Possession Metrics and Rate Stats</a>) is much more repeatable because it relies on less separate factors, although those factors still do exist).
-		<img src="../images/defBox.png" id="RepCanvas"></img>
+	<div id="introtext3">The concept of <a class="define" id="defRepeat"> repeatability </a> is incredibly important for any type of analytics. Goals themelves are not a great example of a repeatable metric, because they rely on many factors like shot location, quality of shot, defender’s position, goalie’s position, goalie’s strengths and weaknesses.
+<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow" src="../images/arrow.png"></img></a>
+	</div>
+	<a class="repeatability">
+	<img src="../images/defBox-sticker.png" id="RepCanvas"></img>
+		<p id="RepGraph1">Repeatability is a measure of the effectiveness of a statistic. For a statistic (or a study) to be considered good, it should be able to be replicated with extremely similar results. For example, the sun setting in the west is a repeatable event, its all but guaranteed to happen every day. Thus, it’d have a repeatability of 1 (the highest it can be, from a 0-1 scale).</p>
+		<p id="RepGraph2">
+			In the example above, we are measuring a coin flipping 2,000 times and seeing how many times it lands on heads, and how many times it lands on tails. Because the ratio of<span style="color:#E8C07F;"> heads</span> to <span style="color:#58DAFF;">tails</span> will vary, this won’t have a repeatability of 1, but 95% of the time it will end up between 900-1100 heads, which gives it a repeatability of .9.</p>
+		<p id="RepGraph3">You can end up with extreme outliers, like 750 <span style="color:#E8C07F;"> heads</span> and 1250 <span style="color:#58DAFF;">tails</span>, are less than 1 in 5,000. So the point of measuring repeatability isn't about if an event can happen, but how likely it is to happen.</p>
 
-		<canvas id="Repeat" width="300" height="300"></canvas>
-		
-		<a><img class="introbackarrow2" src="../images/backarrow.png"></img></a>
-		<a><img class="introarrow2" src="../images/arrow.png"></img></a>
+						<div class ="row ">
+		<div class ="medium-2 columns">	</div>	 <div class ="medium-8 columns">
+					<canvas id="repGraph"></canvas>
+	</div>		 <div class ="medium-2 columns">
+	</div></div>
+
+</a>
+	<div id="introtext4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However a metric like shot attempts (better known as CORSI, but we will be getting more into that in <a id="toplink">Shot Metrics and Rate Stats</a>) is much more repeatable because it relies on less separate factors, although those factors still do exist).
+<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow" src="../images/arrow.png"></img></a>
+	</div>
+</div>
+	<div id="introtext5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sports analytics have been a rapidly growing field for decades, especially now in the public sphere. More people having more access to open data has led to some tremendous innovations in sports analytics, some of which have begun to trickle its way into professional sports leagues.  
+<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow" src="../images/arrow.png"></img></a>
+</div>
+
+	<div id="introtext6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This involves bucking classic notions, like the importance of a player’s size, that fights revitalize a team, and +/- is the best metric to understand how a player performs. This creates a rift between modern analytic workers and classic hockey heads. 
+<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow" src="../images/arrow.png"></img></a>
+</div>
+
+	<div id="introtext7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It transforms a game of energy and excitement to a game of numbers and probabilities, which can understandably suck the fun out for some people. Analytics don’t have to be fun, but they are an important managerial (or armchair GM) tool. 
+<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+	<a><img class="introarrow" src="../images/arrow.png"></img></a>
+
+</div>
+	<div id="introtext8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There will always be complications of numbers due to player use, coach strategies and who they are playing with, but with enough work analytics can erase those concerns. But if you’d like to understand player evaluation without watching games better, continue on this journey with me.
+<a><img class="introbackarrow" src="../images/backarrow.png"></img></a>
+</div>
+			<div class ="medium-2 columns">	&nbsp; </div></div>
+
+<div class="row fullWidth">	
+	<div class ="medium-4 columns">
+		<p id="leftlink">
+			<a id= "subsection"  >Stats gone bad
+
+
+
+
+			</a>
+			<br>
+			<br>
+			<br>
 
 		</p>
-		<p id="introtext3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Since SaberMetrics blew up Baseball, sports analytics are a rapidly growing field, especially in the public sphere. Though teams have always had some sort of internal analytics teams, the public hasn’t had access to it the way we do now. More people having more access has led to some tremendous innovations in sports analytics, which have begun to trickle its way into professional sports leagues. There is still plenty of work to go into hockey analytics, some of which we do not have the technology or manpower to track yet, but the more we learn the more we and understand the game.
-		<a><img class="introbackarrow3" src="../images/backarrow.png"></img></a>
-		<a><img class="introarrow3" src="../images/arrow.png"></img></a>
-		</p>
-		<p id="introtext4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This involves bucking classic notions, like the important of a player’s size, fights energize a team, and +/- is the best metric to understand how a player performs. This creates a rift between modern analytic workers, and classic old style people. It transforms a game of energy and excitement to a game of numbers and probabilities, which can understandably suck the fun out for some people. Turning a classic sport into a random number generator isn’t everyone’s cup of tea, which is why analytics aren’t going to be for everyone. Even players and coaches shouldn’t care about every analytic, and many statistics end up being most important to managers for player evaluation. There will always be complications of numbers due to player use, coach strategies and who they are playing with, but with enough work analytics can erase those concerns.
-		<a><img class="introbackarrow4" src="../images/backarrow.png"></img></a>
-		<!-- <a><img class="introX" src="../images/x.png"></img></a> -->
-		</p>
-		</div>
-    <div class="row fullWidth">	
-		<div class ="medium-4 columns">
-			<p id="leftlink">
-				<a id= "subsection"  >Stats gone bad</a>
-				<br>
-				<br>
-				<br>
-			</p>
-		</div>
+	</div>
 	
-		<div class ="medium-4 columns">
-			<p>
-				<!-- <a class="centerpuck" > --><a><img class="puck" src="../images/puck.png" alt="intro to analytics"></a>
-				<!-- </a> -->
-			</p>
-			
-			</div>	
-		 <div class ="medium-4 columns">
-			<p id="rightlink">
-				<a id= "subsection">Microstats and the<br> Future of Analytics</a>
-				<br>
-				<br>
-				<br>
-			</p>	
-		</div>
-	</div>
-	<div class ="row">
-		
-		<p id="bottomlink">
-			
-			<a id= "subsection">Combating Perception</a>
-			
+	<div class ="medium-4 columns">
+		<p>
+			<!-- <a class="centerpuck" > --><a><div class="puck" alt="intro to analytics" ></div></a>
+			<!-- </a> -->
 		</p>
-	</div>
-		  		
 
-	<script src="../js/menu.js">		
-		</script>
-		<script src="../js/corrBubbleChart.js">
-		</script>
-	<script src="../js/repChart.js">
-		</script>
-  </body>
-  
-  </html>
+	</div>	
+	<div class ="medium-4 columns">
+		<p id="rightlink">
+			<a id= "subsection">Microstats and the<br> Future of Analytics</a>
+			<br>
+			<br>
+			<br>
+		</p>	
+	</div>
+</div>
+<div class ="row">
+
+	<p id="bottomlink">
+
+		<a id= "subsection">Combating Perception</a>
+		</p>
+		<img class="bergeron" src="../images/patrice-bergeron-sticker.png"></img>
+		<a><img class="bergyspeech" src="../images/speech-bubble-crosby-sticker.png"/>
+			<a class="ballBounce"></a>
+			<p class="bergyspeech" id="bergy1"><img src="../images/blinking-arrow.gif" id="speechButton"></img>
+				At the core of the new analytics movement is a stat called CORSI.</p>
+			<p class="bergyspeech" id="bergy2"><img src="../images/blinking-arrow.gif" id="speechButton"></img>
+				CORSI is a new way to track shots. In the past we’ve just been looking at shots on goal, CORSI is tracking shot attempts. </p>
+			<p class="bergyspeech" id="bergy3"><img src="../images/blinking-arrow.gif" id="speechButton"></img>
+				CORSI correlates with winning more than any other stat. 75% of teams in the top 10 CORSI for the past 10 years have made the playoffs. 
+</p>
+			<p class="bergyspeech" id="bergy4"><img src="../images/blinking-arrow.gif" id="speechButton"></img>
+				This stat produces better results than Goal For %, Shot attempts, hits or near any other stat.
+</p>
+		</a>
+
+	
+
+</div>
+
+<script src="../js/menu.js">		
+</script>
+<script src="../js/corrBubbleChart.js">
+</script>
+
+<script src="../js/repChart.js">
+</script>
+
+</body>
+
+</html>

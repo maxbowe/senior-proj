@@ -38,8 +38,8 @@ function returnToHomeFromLink(){
 	returnToHome();	
 
 	$(".puck").animate({
-		height: '+=450px',
-		width: '+=450px',
+		height: '+=350px',
+		width: '+=350px',
 		bottom: "0px",
 		top:"+=25%",
 		left:"+=35%"
@@ -111,8 +111,8 @@ $(".introbg").hide();
 $(".puck").click(function(){
 	if(introPuckHome){
 		$(".puck").animate({
-			height: '+=450px',
-			width: '+=450px',
+			height: '+=350px',
+			width: '+=350px',
 			top:"-=30%",
 			left:"-=28%"
 		});
@@ -561,8 +561,8 @@ $("#toplink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-			height: '-=450px',
-			width: '-=450px',
+			height: '-=350px',
+			width: '-=350px',
 			top:"-=25%",
 			left:"-=35%"	
 		});
@@ -684,8 +684,8 @@ $("#leftlink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-			height: '-=450px',
-			width: '-=450px',
+			height: '-=350px',
+			width: '-=350px',
 			top:"-=25%",
 			left:"-=35%"
 		});
@@ -713,8 +713,8 @@ $("#rightlink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-			height: '-=450px',
-			width: '-=450px',
+			height: '-=350px',
+			width: '-=350px',
 			top:"-=25%",
 			left:"-=35%"
 		});
@@ -749,8 +749,8 @@ $("#bottomlink").click(function(){
 	}
 	else{
 		$(".puck").animate({
-			height: '-=450px',
-			width: '-=450px',
+			height: '-=350px',
+			width: '-=350px',
 			top:"-=25%",
 			left:"-=35%",
 
