@@ -27,6 +27,7 @@ function returnToHome(){
 	$("#canvas").hide();
 	$(".CORSI").hide();
 	$("#goalie").hide();
+
 	$(".introarrow").show();
 
 	canvasReset();
@@ -65,7 +66,7 @@ function returnToHomeFromLink(){
 	
 	 if(crosbySlideNum>5){
 
-		$("#miss1").animate({
+		$("#hit2").animate({
 			
 			opacity:'0'
 			},1000);
@@ -73,6 +74,20 @@ function returnToHomeFromLink(){
 			
 			top:"+=170%",
 			left:"+=30%"
+		});
+	}
+	 if(crosbySlideNum>6){
+
+		$("#hit3").animate({
+				opacity:'0'
+				},2400);
+		$("#puck3").animate({
+				
+				top:"+=170%",
+				left:"+=10%"
+			},600);
+		$("#defenseman").animate({
+		left:'+=80%'
 		});
 	}
 	crosbySlideNum=1;
@@ -576,8 +591,9 @@ $("#toplink").click(function(){
 		$(".crosbyspeech").show();
 		$(".CORSI").show();
 		$("#net").hide();
-		$("#miss1").hide();
+		$("#hit2").hide();
 		$("#goalie").hide();
+		$("#defenseman").hide();
 
 		$("#check1").hide();
 		$("#crosby2").hide();
@@ -585,6 +601,8 @@ $("#toplink").click(function(){
 		$("#crosby4").hide();
 		$("#crosby5").hide();
 		$("#crosby6").hide();
+		$("#crosby7").hide();
+		$("#crosby8").hide();
 		toplinkON=true;
 
 
@@ -594,12 +612,18 @@ $("#toplink").click(function(){
 var crosbySlideNum =1 , crosbySlide= "#crosby1" ;
 $(".crosbyspeech").click(function(){
 	console.log(crosbySlideNum);
-	if(crosbySlideNum==2){
+
+	if(crosbySlideNum==1){
 		$("#net").show();
+		$("#goalie").show();
+
+
+	}
+	if(crosbySlideNum==2){
+
 
 	}
 	if(crosbySlideNum==3){
-		$("#goalie").show();
 
 
 	}
@@ -619,8 +643,8 @@ $(".crosbyspeech").click(function(){
 
 	}
 	if(crosbySlideNum==5){
-		$("#miss1").show();
-		$("#miss1").animate({
+		$("#hit2").show();
+		$("#hit2").animate({
 			opacity:'1'
 			},2400);
 	$("#puck2").animate({
@@ -631,11 +655,27 @@ $(".crosbyspeech").click(function(){
 		
 
 	}
+	if(crosbySlideNum==6){
+	$("#defenseman").show();
+	$("#defenseman").animate({
+		left:'-=80%'
+		});
+	$("#hit3").animate({
+			opacity:'1'
+			},2400);
+	$("#puck3").animate({
+			
+			top:"-=170%",
+			left:"-=10%"
+		},600);
+
+
+	}
 	
-	if(crosbySlideNum == 6){
+	if(crosbySlideNum == 8){
 		crosbySlideNum = 1;
 		crosbySlide= "#crosby" + crosbySlideNum;
-		$("#miss1").animate({
+		$("#hit2").animate({
 			
 			opacity:'0'
 			},1000);
@@ -651,6 +691,17 @@ $(".crosbyspeech").click(function(){
 			
 			top:"+=170%",
 			left:"+=30%"
+		});
+		$("#hit3").animate({
+			opacity:'0'
+			},200);
+	$("#puck3").animate({
+			
+			top:"+=170%",
+			left:"+=10%"
+		},600);
+	$("#defenseman").animate({
+		left:'+=80%'
 		});
 		returnToHomeFromLink();
 		toplinkON=false;
