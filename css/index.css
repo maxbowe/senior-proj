@@ -33,7 +33,7 @@ p {
 	font-size:3em;
 	visibility: visible;
 }
-#toplink{
+/*#toplink{
 	top:5%;
 left:50%;
 z-index:500;
@@ -45,10 +45,10 @@ z-index:500;
 	top:90%;
 	left:40%	
 
-}
-#leftlink{
-	top:50%;
-	left:13%;
+}*/
+#toplink{
+	top:48%;
+	left:8%;
 	position:absolute;
 
 }
@@ -74,9 +74,9 @@ z-index:500;
   background-repeat: no-repeat;
   background-size: cover;
 }
-#rightlink{
+#bottomlink{
 	top:50%;
-	right:10%;
+	right:3%;
 	position:absolute;
 
 }
@@ -170,6 +170,7 @@ position:absolute;
 	position:absolute;
 	bottom:5%;
 	height:35%;
+	z-index: 100;
 }
 .crosbyspeech, .bergyspeech{
 	position:absolute;
@@ -204,8 +205,8 @@ p.crosbyspeech, p.bergyspeech 	{
 #chartButton{
 	z-index: 45;
 	position: absolute;
-	top:82%;
-	left:65%;
+	top:78%;
+	left:67%;
 	width:5%;
 }
 #speechButton{
