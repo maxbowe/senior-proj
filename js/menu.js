@@ -643,6 +643,8 @@ $(".crosbyspeech").click(function(){
 
 	}
 	if(crosbySlideNum==5){
+
+
 		$("#hit2").show();
 		$("#hit2").animate({
 			opacity:'1'
