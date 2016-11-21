@@ -48,7 +48,7 @@ z-index:500;
 }*/
 #toplink{
 	top:48%;
-	left:8%;
+	left:4%;
 	position:absolute;
 
 }
@@ -75,8 +75,8 @@ z-index:500;
   background-size: cover;
 }
 #bottomlink{
-	top:50%;
-	right:3%;
+	top:48%;
+	right:4%;
 	position:absolute;
 
 }
