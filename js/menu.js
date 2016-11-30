@@ -21,12 +21,29 @@ function returnToHome(){
 	$(".crosby").hide();
 	$(".crosbyspeech").hide();
 	$(".bergeron").hide();
-	$(".bergyspeech").hide();
+$(".bergyspeech").hide();
+$("#bergy1").hide();
+$("#bergy2").hide();
+$("#bergy3").hide();
+$("#bergy4").hide();
+$("#heroChart").hide();
+$("#heroChart2").hide();
+$("#bergy5").hide();
+$("#bergy6").hide();
+$("#bergy7").hide();
+$("#bergy8").hide();
+$("#bergy9").hide();
+$("#bergy10").hide();
+$("#burnsAnalysis").hide();
 	$(".introbg").hide();
 	hideCorr();
 	$("#canvas").hide();
 	$(".CORSI").hide();
 	$("#goalie").hide();
+$("#strengths1").hide();
+$("#strengths2").hide();
+$("#strengths3").hide();
+$("#strengths4").hide();
 
 	$(".introarrow").show();
 
@@ -603,6 +620,9 @@ $("#toplink").click(function(){
 		$("#crosby6").hide();
 		$("#crosby7").hide();
 		$("#crosby8").hide();
+		$("#crosby9").hide();
+		$("#crosby10").hide();
+		$("#crosby11").hide();
 		toplinkON=true;
 
 
@@ -673,8 +693,64 @@ $(".crosbyspeech").click(function(){
 
 
 	}
+	if(crosbySlideNum==7){
+		$("#hit2").animate({
+			
+			opacity:'0'
+			},1);
+		$("#check1").animate({
+			opacity:'0'
+			},1);
+		$("#puck1").css({
+			
+			top:"210%",
+			left:"-10%"
+		});
+		$("#puck2").css({
+			
+			top:"210%",
+			left:"110%"
+		});
+		$("#hit3").animate({
+			opacity:'0'
+			},1);
+	$("#puck3").css({
+			
+			top:"210%",
+			left:"60%"
+		},1);
+	$("#defenseman").animate({
+		left:'+=80%'
+		},1);
+		
+
+
+
 	
-	if(crosbySlideNum == 8){
+	}
+	if(crosbySlideNum==8){
+		$("#hit2").show();
+		$("#hit2").animate({
+			opacity:'1'
+			},2400);
+	$("#puck2").animate({
+			
+			top:"-=170%",
+			left:"-=30%"
+		},600);
+	$("#check1").show();
+		$("#puck1").animate({
+			
+			top:"-=180%",
+			left:"+=50%",
+
+		},600);
+		$("#check1").animate({
+			opacity:'1'
+			},2400);
+		
+	}
+	if(crosbySlideNum == 11){
 		crosbySlideNum = 1;
 		crosbySlide= "#crosby" + crosbySlideNum;
 		$("#hit2").animate({
@@ -694,17 +770,8 @@ $(".crosbyspeech").click(function(){
 			top:"+=170%",
 			left:"+=30%"
 		});
-		$("#hit3").animate({
-			opacity:'0'
-			},200);
-	$("#puck3").animate({
-			
-			top:"+=170%",
-			left:"+=10%"
-		},600);
-	$("#defenseman").animate({
-		left:'+=80%'
-		});
+		
+	
 		returnToHomeFromLink();
 		toplinkON=false;
 
@@ -793,6 +860,22 @@ $("#bergy1").hide();
 $("#bergy2").hide();
 $("#bergy3").hide();
 $("#bergy4").hide();
+$("#heroChart").hide();
+$("#bergy5").hide();
+$("#bergy6").hide();
+$("#bergy7").hide();
+$("#bergy8").hide();
+$("#bergy9").hide();
+$("#bergy10").hide();
+$("#burnsAnalysis").hide();
+$("#heroChart2").hide();
+$("#strengths1").hide();
+$("#strengths2").hide();
+$("#strengths3").hide();
+$("#strengths4").hide();
+
+
+
 
 var bottomlinkON = false;
 $("#bottomlink").click(function(){
@@ -820,6 +903,22 @@ $("#bottomlink").click(function(){
 			$("#bergy2").hide();
 $("#bergy3").hide();
 $("#bergy4").hide();
+$("#bergy5").hide();
+$("#bergy6").hide();
+$("#bergy7").hide();
+$("#bergy8").hide();
+$("#bergy9").hide();
+$("#bergy10").hide();
+$("#heroChart").hide();
+$("#heroChart2").hide();
+$("#burnsAnalysis").hide();
+$("#strengths1").hide();
+$("#strengths2").hide();
+$("#strengths3").hide();
+$("#strengths4").hide();
+
+
+
 
 		hideHome();			
 
@@ -832,7 +931,7 @@ var bergySlideNum =1 , bergySlide= "#bergy1" ;
 $(".bergyspeech").click(function(){
 	console.log(bergySlideNum);
 
-	if(bergySlideNum == 4){
+	if(bergySlideNum == 10){
 		bergySlideNum = 1;
 		bergySlide= "#bergy" + bergySlideNum;
 
@@ -852,8 +951,56 @@ $(".bergyspeech").click(function(){
 
 
 	} 
+	 if(bergySlideNum==1){
+
+	}
+	else if(bergySlideNum==2){
+
+	}
+	else if(bergySlideNum==3){
+
+	}
+	else if(bergySlideNum==4){
+		$("#strengths1").show();
+
+	}
+	else if(bergySlideNum==5){
+		$("#strengths2").show();
+		$("#strengths1").hide();
+
+	}
+	else if(bergySlideNum==6){
+		$("#strengths3").show();
+		$("#strengths2").hide();
 
 
+	}
+	else if(bergySlideNum==7){
+		$("#strengths4").show();
+		$("#strengths3").hide();
+
+	}
+	else if(bergySlideNum==8){
+		$("#strengths4").hide();
+
+		$("#burnsAnalysis").show();
+
+	}
+
+	else if(bergySlideNum==9){
+	$("#burnsAnalysis").hide();
+
+		$("#heroChart").show();
+
+	}
+	else if(bergySlideNum==10){
+		$("#heroChart2").show();
+		$("#heroChart").hide();
+
+
+	}
+
+	
 });
 var animate1 = $("#introtext1").blast({ delimiter: "word" });
 function introtext1Start(){animate1.each(function(i) {

@@ -157,7 +157,7 @@ position:absolute;
 #CorrGraph1,#CorrGraph2,  #CorrGraph3, #RepGraph1, #RepGraph2, #RepGraph3{
 	font-family:"Kalinga";
 	position:absolute;
-	top:73%;
+	top:70%;
 	left:29%;
 	z-index:30;
 	font-size:1.25em;
@@ -171,18 +171,19 @@ position:absolute;
 	bottom:5%;
 	height:35%;
 	z-index: 100;
+	left:10%;
 }
 .crosbyspeech, .bergyspeech{
 	position:absolute;
-	bottom:5%;
-	left:35%;
+	bottom:10%;
+	left:30%;
 }
 p.crosbyspeech, p.bergyspeech 	{
 	font-family: "Kalinga";
-	font-size: 1.4em;
-	width:600px;
-	left:38%;
-	top:77%;
+	font-size: 1.35em;
+	width:650px;
+	left:34%;
+	top:72%;
 	color:white;
 	text-align: left;
 }
@@ -214,7 +215,7 @@ p.crosbyspeech, p.bergyspeech 	{
 	position: absolute;
 	left:85%;
 	width:8%;
-	top:62%;
+	top:72%;
 }
 #net{
 	position: absolute;
@@ -277,4 +278,19 @@ p.crosbyspeech, p.bergyspeech 	{
 	width: 7%;
 	top:210%;
 	left:60%;
+}
+#heroChart, #heroChart2{
+	position: absolute;
+	left:30%;
+	top:-0%;
+	width:40%;
+}
+ #strengths1, #strengths2, #strengths3, #strengths4{
+	position: absolute;
+	top:-0%;
+	left:25%;
+	height: 65%;
+ 	}
+#burnsAnalysis{
+	position: absolute;
 }
